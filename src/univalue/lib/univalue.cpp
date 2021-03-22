@@ -7,7 +7,6 @@
 #include <iomanip>
 #include <sstream>
 #include <stdlib.h>
-
 #include "univalue.h"
 
 const UniValue NullUniValue;

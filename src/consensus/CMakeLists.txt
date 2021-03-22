@@ -5,4 +5,4 @@ add_library(
 )
 
 target_include_directories(Consensus PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_link_libraries(Consensus boost)
+target_link_libraries(Consensus Primitives bitcoin-core Util)

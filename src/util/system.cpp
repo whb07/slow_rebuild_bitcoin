@@ -68,7 +68,7 @@
 #include <boost/algorithm/string/replace.hpp>
 #include <thread>
 #include <typeinfo>
-#include "../univalue/include/univalue.h"
+#include "univalue.h"
 
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();

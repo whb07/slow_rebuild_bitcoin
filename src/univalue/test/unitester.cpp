@@ -75,6 +75,8 @@ static void runtest_file(const char *filename_)
         fclose(f);
 
         runtest(basename, jdata);
+        
+
 }
 
 static const char *filenames[] = {

@@ -10,7 +10,7 @@
 #include "script/sign.h"
 #include "serialize.h"
 #include "streams.h"
-#include "univalue/include/univalue.h"
+#include "univalue.h"
 #include "util/strencodings.h"
 #include "version.h"
 

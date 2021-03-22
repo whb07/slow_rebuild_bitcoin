@@ -18,7 +18,7 @@
 #include "script/script.h"
 #include "script/sign.h"
 #include "script/signingprovider.h"
-#include "univalue/include/univalue.h"
+#include "univalue.h"
 #include "util/moneystr.h"
 #include "util/rbf.h"
 #include "util/strencodings.h"

@@ -5,4 +5,4 @@ add_library(
 )
 add_subdirectory(allocators)
 target_include_directories(Support PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_link_libraries(Support Allocators)
+target_link_libraries(Support Allocators bitcoin-core)
