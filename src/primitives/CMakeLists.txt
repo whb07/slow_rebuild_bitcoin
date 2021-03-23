@@ -4,4 +4,4 @@ add_library(
 )
 
 target_include_directories(Primitives PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_link_libraries(Primitives Script Util)
+target_link_libraries(Primitives Script Util bitcoin-core)

@@ -10,7 +10,7 @@
 #endif
 #include <sys/socket.h>
 #include "attributes.h"
-//#include "compat.h"
+#include "compat.h"
 #include "prevector.h"
 #include "serialize.h"
 #include "tinyformat.h"

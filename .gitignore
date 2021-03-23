@@ -1,0 +1,6 @@
+.dirstamp
+*.o
+cmake-build-debug/
+.idea/
+**/build/
+**/.deps/

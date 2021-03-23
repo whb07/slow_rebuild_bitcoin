@@ -6,5 +6,5 @@ add_library(
         signingprovider.cpp signingprovider.h standard.cpp standard.h
 )
 
-target_link_libraries(Script boost)
+target_link_libraries(Script Primitives bitcoin-core )
 target_include_directories(Script PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

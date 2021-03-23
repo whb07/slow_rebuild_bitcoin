@@ -1,6 +1,8 @@
 #include <iostream>
 #include "univalue.h"
 
+#include <netinet/in.h>
+
 
 int main() {
     char buf[] = "___[1,2,3]___";

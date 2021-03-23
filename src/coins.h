@@ -223,6 +223,7 @@ protected:
     mutable size_t cachedCoinsUsage;
 
 public:
+    virtual ~CCoinsViewCache() {}
     CCoinsViewCache(CCoinsView *baseIn);
 
     /**
