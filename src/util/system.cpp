@@ -18,6 +18,8 @@
 #include "translation.h"
 
 
+
+
 #if (defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__DragonFly__))
 #include <pthread.h>
 #include <pthread_np.h>
@@ -66,6 +68,7 @@
 #endif
 
 #include <boost/algorithm/string/replace.hpp>
+
 #include <thread>
 #include <typeinfo>
 #include "univalue.h"

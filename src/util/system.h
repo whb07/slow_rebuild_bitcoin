@@ -9,6 +9,9 @@
  */
 #ifndef BITCOIN_UTIL_SYSTEM_H
 #define BITCOIN_UTIL_SYSTEM_H
+#include <boost/filesystem.hpp>
+#include <boost/filesystem/exception.hpp>
+#include <boost/filesystem/path.hpp>
 
 #if defined(HAVE_CONFIG_H)
 #include "../config/bitcoin-config.h"

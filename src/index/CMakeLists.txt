@@ -4,5 +4,5 @@ add_library(
         disktxpos.h txindex.cpp txindex.h
 )
 
-target_link_libraries(Index bitcoin-core)
+target_link_libraries(Index bitcoin-core Node Util Primitives)
 target_include_directories(Index PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

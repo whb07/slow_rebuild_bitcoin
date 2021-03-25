@@ -5,5 +5,5 @@ add_library(
         ui_interface.h utxo_snapshot.h
 )
 
-target_link_libraries(Node bitcoin-core Consensus Crypto)
+target_link_libraries(Node bitcoin-core Consensus Crypto Util Policy Primitives)
 target_include_directories(Node PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

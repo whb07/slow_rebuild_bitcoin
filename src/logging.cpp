@@ -7,6 +7,11 @@
 #include "util/threadnames.h"
 #include "util/string_.h"
 #include "util/time_.h"
+#include <boost/filesystem.hpp>
+#include <boost/filesystem/fstream.hpp>
+#include <boost/filesystem/exception.hpp>
+#include <boost/filesystem/path.hpp>
+#include <boost/filesystem/operations.hpp>
 
 #include <mutex>
 
