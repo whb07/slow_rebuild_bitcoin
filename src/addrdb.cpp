@@ -12,7 +12,7 @@
 #include "hash.h"
 #include "logging/timer.h"
 #include "random.h"
-#include <streams.h>
+#include "streams.h"
 #include "tinyformat.h"
 #include "util/system.h"
 

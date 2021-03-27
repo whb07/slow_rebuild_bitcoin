@@ -31,7 +31,7 @@
 #include <event2/util.h>
 #include <event2/keyvalq_struct.h>
 
-#include <support/events.h>
+#include "support/events.h"
 
 /** Maximum size of http request (request line + headers) */
 static const size_t MAX_HEADERS_SIZE = 8192;

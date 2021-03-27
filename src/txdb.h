@@ -16,6 +16,11 @@
 #include <utility>
 #include <vector>
 
+#include "leveldb/db.h"
+#include "leveldb/write_batch.h"
+#include "leveldb/env.h"
+
+
 class CBlockIndex;
 class CCoinsViewDBCursor;
 class uint256;

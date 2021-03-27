@@ -10,6 +10,8 @@
 #include "../flatfile.h"
 #include "base.h"
 #include "../util/hasher.h"
+#include "leveldb/write_batch.h"
+#include "leveldb/env.h"
 
 /** Interval between compact filter checkpoints. See BIP 157. */
 static constexpr int CFCHECKPT_INTERVAL = 1000;
