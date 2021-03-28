@@ -16,7 +16,7 @@ include_directories(".")
 
 file(GLOB HEADER_LIST "${CMAKE_CURRENT_SOURCE_DIR}/include/leveldb/*.h")
 # Make an automatic library - will be static or dynamic based on user setting
-add_library(leveldb  ${HEADER_LIST} db/c.cc)
+add_library(leveldb STATIC ${HEADER_LIST} db/c.cc)
 set_target_properties(leveldb PROPERTIES LINKER_LANGUAGE CXX)
 target_include_directories(leveldb PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
@@ -31,7 +31,7 @@ file(GLOB PORT_LIST
         "${CMAKE_CURRENT_SOURCE_DIR}/port/*.h"
         "${CMAKE_CURRENT_SOURCE_DIR}/port/*.h.*"
         )
-add_library(port ${PORT_LIST} )
+add_library(port STATIC ${PORT_LIST} )
 target_include_directories(port PUBLIC port)
 
 
@@ -40,7 +40,7 @@ file(GLOB DB_LIST
         "${CMAKE_CURRENT_SOURCE_DIR}/db/*.h"
         "${CMAKE_CURRENT_SOURCE_DIR}/db/*.cc"
         )
-add_library(db ${DB_LIST})
+add_library(db STATIC ${DB_LIST})
 target_include_directories(db PUBLIC db)
 target_link_libraries(db PUBLIC leveldb port)
 
@@ -50,7 +50,7 @@ file(GLOB HELPERS_LIST
         "${CMAKE_CURRENT_SOURCE_DIR}/helpers/*/*.h"
         "${CMAKE_CURRENT_SOURCE_DIR}/helpers/*/*.cc"
         )
-add_library(helpers ${HELPERS_LIST})
+add_library(helpers STATIC ${HELPERS_LIST})
 target_include_directories(helpers PUBLIC helpers)
 target_link_libraries(helpers PUBLIC leveldb port)
 
@@ -61,7 +61,7 @@ file(GLOB UTIL_LIST
         "${CMAKE_CURRENT_SOURCE_DIR}/util/*.cc"
         )
 list(REMOVE_ITEM UTIL_LIST "${CMAKE_CURRENT_SOURCE_DIR}/util/env_windows.cc")
-add_library(util ${UTIL_LIST})
+add_library(util STATIC ${UTIL_LIST})
 target_include_directories(util PUBLIC util)
 target_link_libraries(util PUBLIC helpers leveldb port )
 
@@ -71,12 +71,14 @@ file(GLOB TABLE_LIST
         "${CMAKE_CURRENT_SOURCE_DIR}/table/*.cc"
         )
 
-add_library(table ${TABLE_LIST})
+add_library(table STATIC ${TABLE_LIST})
 target_include_directories(table PUBLIC table)
 target_link_libraries(table PUBLIC leveldb util)
 
 
 target_compile_definitions(port PUBLIC LEVELDB_PLATFORM_POSIX=1 LEVELDB_IS_BIG_ENDIAN=0)
+
+target_link_libraries(leveldb PUBLIC port table util helpers db)
 source_group(
         TREE "${CMAKE_CURRENT_SOURCE_DIR}/include"
         PREFIX "Header Files"

@@ -11,6 +11,7 @@
 #include "../util/translation.h"
 #include "../validation.h"
 #include "../warnings.h"
+#include "leveldb/write_batch.h"
 
 constexpr char DB_BEST_BLOCK = 'B';
 

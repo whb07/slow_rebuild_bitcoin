@@ -2,15 +2,15 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../amount.h"
-#include "../node/context.h"
-#include "../primitives/transaction.h"
-#include "../random.h"
-#include "../test/util/setup_common.h"
+#include "../../amount.h"
+#include "../../node/context.h"
+#include "../../primitives/transaction.h"
+#include "../../random.h"
+#include "../../test/util/setup_common.h"
 #include "../coincontrol.h"
 #include "../coinselection.h"
 #include "wallet_test_fixture.h"
-#include "wallet.h"
+#include "../wallet.h"
 
 #include <boost/test/unit_test.hpp>
 #include <random>

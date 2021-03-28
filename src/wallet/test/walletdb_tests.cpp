@@ -3,9 +3,9 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "../../test/util/setup_common.h"
-#include "../clientversion.h"
-#include "../streams.h"
-#include "../uint256.h"
+#include "../../clientversion.h"
+#include "../../streams.h"
+#include "../../uint256.h"
 
 #include <boost/test/unit_test.hpp>
 

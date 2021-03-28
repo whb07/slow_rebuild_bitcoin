@@ -10,6 +10,7 @@
 #include "../primitives/transaction.h"
 #include "../threadinterrupt.h"
 #include "../validationinterface.h"
+#include "leveldb/write_batch.h"
 
 class CBlockIndex;
 

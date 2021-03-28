@@ -8,6 +8,7 @@
 #include "../chain.h"
 #include "base.h"
 #include "../txdb.h"
+#include "leveldb/write_batch.h"
 
 /**
  * TxIndex is used to look up transactions included in the blockchain by hash.
