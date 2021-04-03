@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "coinselection.h"
+#include <wallet/coinselection.h>
 
-#include "../policy/feerate.h"
-#include "../util/system.h"
-#include "../util/moneystr.h"
+#include <policy/feerate.h>
+#include <util/system.h>
+#include <util/moneystr.h>
 
 #include <optional>
 

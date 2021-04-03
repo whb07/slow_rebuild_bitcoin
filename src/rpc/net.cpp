@@ -2,33 +2,33 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "server.h"
+#include <rpc/server.h>
 
-#include "../banman.h"
-#include "../chainparams.h"
-#include "../clientversion.h"
-#include "../core_io.h"
-#include "../net.h"
-#include "../net_permissions.h"
-#include "../net_processing.h"
-#include "../net_types.h" // For banmap_t
-#include "../netbase.h"
-#include "../node/context.h"
-#include "../policy/settings.h"
-#include "blockchain.h"
-#include "protocol.h"
-#include "util.h"
-#include "../sync.h"
-#include "../timedata.h"
-#include "../util/strencodings.h"
-#include "../util/string_.h"
-#include "../util/system.h"
-#include "../util/translation.h"
-#include "../validation.h"
-#include "../version.h"
-#include "../warnings.h"
+#include <banman.h>
+#include <chainparams.h>
+#include <clientversion.h>
+#include <core_io.h>
+#include <net.h>
+#include <net_permissions.h>
+#include <net_processing.h>
+#include <net_types.h> // For banmap_t
+#include <netbase.h>
+#include <node/context.h>
+#include <policy/settings.h>
+#include <rpc/blockchain.h>
+#include <rpc/protocol.h>
+#include <rpc/util.h>
+#include <sync.h>
+#include <timedata.h>
+#include <util/strencodings.h>
+#include <util/string_.h>
+#include <util/system.h>
+#include <util/translation.h>
+#include <validation.h>
+#include <version.h>
+#include <warnings.h>
 
-#include "univalue.h"
+#include <univalue.h>
 
 const std::vector<std::string> CONNECTION_TYPE_DOC{
         "outbound-full-relay (default automatic connections)",

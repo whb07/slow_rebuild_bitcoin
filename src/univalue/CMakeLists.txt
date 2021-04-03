@@ -2,7 +2,7 @@
 project(UNIVALUE LANGUAGES CXX)
 cmake_minimum_required(VERSION 3.2)
 
-add_library(Univalue
+add_library(Univalue STATIC
     lib/univalue_escapes.h
     lib/univalue_get.cpp
     lib/univalue_read.cpp
@@ -16,8 +16,7 @@ add_library(Univalue
 # paths.
 target_include_directories(Univalue PUBLIC
 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-$<INSTALL_INTERFACE:include>
-PRIVATE lib)
+$<INSTALL_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
 
 set(JSON_TEST_SRC "${CMAKE_CURRENT_SOURCE_DIR}/test")
 message(STATUS "JSON_TEST_SRC include dir: ${JSON_TEST_SRC}")

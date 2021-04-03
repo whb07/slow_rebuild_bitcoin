@@ -2,12 +2,12 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../../fs.h"
-#include "univalue.h"
-#include "../../util/check.h"
-#include "../../util/system.h"
+#include <fs.h>
+#include <univalue.h>
+#include <util/check.h>
+#include <util/system.h>
 
-#include "init_test_fixture.h"
+#include <wallet/test/init_test_fixture.h>
 
 InitWalletDirTestingSetup::InitWalletDirTestingSetup(const std::string& chainName) : BasicTestingSetup(chainName)
 {

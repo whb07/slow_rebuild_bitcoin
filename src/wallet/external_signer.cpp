@@ -2,12 +2,12 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../chainparams.h"
-#include "../core_io.h"
-#include "../psbt.h"
-#include "../util/strencodings.h"
-#include "../util/system.h"
-#include "external_signer.h"
+#include <chainparams.h>
+#include <core_io.h>
+#include <psbt.h>
+#include <util/strencodings.h>
+#include <util/system.h>
+#include <wallet/external_signer.h>
 
 ExternalSigner::ExternalSigner(const std::string& command, const std::string& fingerprint, std::string chain, std::string name): m_command(command), m_fingerprint(fingerprint), m_chain(chain), m_name(name) {}
 

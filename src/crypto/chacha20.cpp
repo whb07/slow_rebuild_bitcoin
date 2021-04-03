@@ -5,10 +5,10 @@
 // Based on the public domain implementation 'merged' by D. J. Bernstein
 // See https://cr.yp.to/chacha.html.
 
-#include "common.h"
-#include "chacha20.h"
+#include <crypto/common.h>
+#include <crypto/chacha20.h>
 
-#include <cstring>
+#include <string.h>
 
 constexpr static inline uint32_t rotl32(uint32_t v, int c) { return (v << c) | (v >> (32 - c)); }
 

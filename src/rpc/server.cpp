@@ -3,13 +3,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "server.h"
+#include <rpc/server.h>
 
-#include "util.h"
-#include "../shutdown.h"
-#include "../sync.h"
-#include "strencodings.h"
-#include "system.h"
+#include <rpc/util.h>
+#include <shutdown.h>
+#include <sync.h>
+#include <util/strencodings.h>
+#include <util/system.h>
 
 #include <boost/algorithm/string/classification.hpp>
 #include <boost/algorithm/string/split.hpp>

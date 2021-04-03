@@ -3,39 +3,39 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "wallet.h"
+#include <wallet/wallet.h>
 
-#include "../chain.h"
-#include "../consensus/consensus.h"
-#include "../consensus/validation.h"
-#include "../fs.h"
-#include "../interfaces/chain.h"
-#include "../interfaces/wallet.h"
-#include "../key.h"
-#include "../key_io.h"
-#include "../outputtype.h"
-#include "../policy/fees.h"
-#include "../policy/policy.h"
-#include "../primitives/block.h"
-#include "../primitives/transaction.h"
-#include "../psbt.h"
-#include "../script/descriptor.h"
-#include "../script/script.h"
-#include "../script/signingprovider.h"
-#include "../txmempool.h"
-#include "../util/bip32.h"
-#include "../util/check.h"
-#include "../util/error.h"
-#include "../util/fees.h"
-#include "../util/moneystr.h"
-#include "../util/rbf.h"
-#include "../util/string_.h"
-#include "../util/translation.h"
-#include "coincontrol.h"
-#include "fees.h"
-#include "external_signer_scriptpubkeyman.h"
+#include <chain.h>
+#include <consensus/consensus.h>
+#include <consensus/validation.h>
+#include <fs.h>
+#include <interfaces/chain.h>
+#include <interfaces/wallet.h>
+#include <key.h>
+#include <key_io.h>
+#include <outputtype.h>
+#include <policy/fees.h>
+#include <policy/policy.h>
+#include <primitives/block.h>
+#include <primitives/transaction.h>
+#include <psbt.h>
+#include <script/descriptor.h>
+#include <script/script.h>
+#include <script/signingprovider.h>
+#include <txmempool.h>
+#include <util/bip32.h>
+#include <util/check.h>
+#include <util/error.h>
+#include <util/fees.h>
+#include <util/moneystr.h>
+#include <util/rbf.h>
+#include <util/string_.h>
+#include <util/translation.h>
+#include <wallet/coincontrol.h>
+#include <wallet/fees.h>
+#include <wallet/external_signer_scriptpubkeyman.h>
 
-#include "univalue.h"
+#include <univalue.h>
 
 #include <algorithm>
 #include <assert.h>

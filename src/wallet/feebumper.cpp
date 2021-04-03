@@ -2,17 +2,17 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../interfaces/chain.h"
-#include "../policy/fees.h"
-#include "../policy/policy.h"
-#include "../util/moneystr.h"
-#include "../util/rbf.h"
-#include "../util/system.h"
-#include "../util/translation.h"
-#include "coincontrol.h"
-#include "feebumper.h"
-#include "fees.h"
-#include "wallet.h"
+#include <interfaces/chain.h>
+#include <policy/fees.h>
+#include <policy/policy.h>
+#include <util/moneystr.h>
+#include <util/rbf.h>
+#include <util/system.h>
+#include <util/translation.h>
+#include <wallet/coincontrol.h>
+#include <wallet/feebumper.h>
+#include <wallet/fees.h>
+#include <wallet/wallet.h>
 
 //! Check whether transaction has descendant in wallet or mempool, or has been
 //! mined, or conflicts with a mined transaction. Return a feebumper::Result.

@@ -3,23 +3,23 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../httpserver.h"
-#include "../index/blockfilterindex.h"
-#include "../index/txindex.h"
-#include "../interfaces/chain.h"
-#include "../key_io.h"
-#include "../node/context.h"
-#include "../outputtype.h"
-#include "blockchain.h"
-#include "server.h"
-#include "util.h"
-#include "../scheduler.h"
-#include "../script/descriptor.h"
-#include "../util/check.h"
-#include "../util/message.h" // For MessageSign(), MessageVerify()
-#include "../util/ref.h"
-#include "../util/strencodings.h"
-#include "../util/system.h"
+#include <httpserver.h>
+#include <index/blockfilterindex.h>
+#include <index/txindex.h>
+#include <interfaces/chain.h>
+#include <key_io.h>
+#include <node/context.h>
+#include <outputtype.h>
+#include <rpc/blockchain.h>
+#include <rpc/server.h>
+#include <rpc/util.h>
+#include <scheduler.h>
+#include <script/descriptor.h>
+#include <util/check.h>
+#include <util/message.h> // For MessageSign(), MessageVerify()
+#include <util/ref.h>
+#include <util/strencodings.h>
+#include <util/system.h>
 
 #include <stdint.h>
 #include <tuple>

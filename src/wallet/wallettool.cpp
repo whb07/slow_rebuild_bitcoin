@@ -2,13 +2,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../fs.h"
-#include "../util/system.h"
-#include "../util/translation.h"
-#include "dump.h"
-#include "salvage.h"
-#include "wallet.h"
-#include "walletutil.h"
+#include <fs.h>
+#include <util/system.h>
+#include <util/translation.h>
+#include <wallet/dump.h>
+#include <wallet/salvage.h>
+#include <wallet/wallet.h>
+#include <wallet/walletutil.h>
 
 namespace WalletTool {
 

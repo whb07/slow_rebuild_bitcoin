@@ -2,14 +2,14 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../chainparamsbase.h"
-#include "../key_io.h"
-#include "../rpc/server.h"
-#include "../rpc/util.h"
-#include "../util/strencodings.h"
-#include "rpcsigner.h"
-#include "rpcwallet.h"
-#include "wallet.h"
+#include <chainparamsbase.h>
+#include <key_io.h>
+#include <rpc/server.h>
+#include <rpc/util.h>
+#include <util/strencodings.h>
+#include <wallet/rpcsigner.h>
+#include <wallet/rpcwallet.h>
+#include <wallet/wallet.h>
 
 #ifdef ENABLE_EXTERNAL_SIGNER
 

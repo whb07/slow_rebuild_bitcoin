@@ -5,8 +5,8 @@
 #ifndef BITCOIN_WALLET_RPCSIGNER_H
 #define BITCOIN_WALLET_RPCSIGNER_H
 
-#include "../span.h"
-#include "../util/system.h"
+#include <span.h>
+#include <util/system.h>
 #include <vector>
 
 #ifdef ENABLE_EXTERNAL_SIGNER

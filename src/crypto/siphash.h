@@ -7,7 +7,7 @@
 
 #include <stdint.h>
 
-#include "../uint256.h"
+#include <uint256.h>
 
 /** SipHash-2-4 */
 class CSipHasher

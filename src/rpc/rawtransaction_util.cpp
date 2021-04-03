@@ -3,21 +3,21 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "rawtransaction_util.h"
+#include <rpc/rawtransaction_util.h>
 
-#include "../coins.h"
-#include "../core_io.h"
-#include "../key_io.h"
-#include "../policy/policy.h"
-#include "../primitives/transaction.h"
-#include "request.h"
-#include "util.h"
-#include "../script/sign.h"
-#include "../script/signingprovider.h"
-#include "../tinyformat.h"
-#include "univalue.h"
-#include "../util/rbf.h"
-#include "../util/strencodings.h"
+#include <coins.h>
+#include <core_io.h>
+#include <key_io.h>
+#include <policy/policy.h>
+#include <primitives/transaction.h>
+#include <rpc/request.h>
+#include <rpc/util.h>
+#include <script/sign.h>
+#include <script/signingprovider.h>
+#include <tinyformat.h>
+#include <univalue.h>
+#include <util/rbf.h>
+#include <util/strencodings.h>
 
 CMutableTransaction ConstructTransaction(const UniValue& inputs_in, const UniValue& outputs_in, const UniValue& locktime, bool rbf)
 {

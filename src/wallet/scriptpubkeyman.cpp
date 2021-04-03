@@ -2,19 +2,19 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../key_io.h"
-#include "../logging.h"
-#include "../outputtype.h"
-#include "../script/descriptor.h"
-#include "../script/sign.h"
-#include "../util/bip32.h"
-#include "../util/strencodings.h"
-#include "../util/string_.h"
-#include "../util/system.h"
-#include "../util/time_.h"
-#include "../util/translation.h"
-#include "external_signer.h"
-#include "scriptpubkeyman.h"
+#include <key_io.h>
+#include <logging.h>
+#include <outputtype.h>
+#include <script/descriptor.h>
+#include <script/sign.h>
+#include <util/bip32.h>
+#include <util/strencodings.h>
+#include <util/string_.h>
+#include <util/system.h>
+#include <util/time_.h>
+#include <util/translation.h>
+#include <wallet/external_signer.h>
+#include <wallet/scriptpubkeyman.h>
 
 #include <optional>
 

@@ -5,10 +5,10 @@
 #ifndef BITCOIN_WALLET_COINSELECTION_H
 #define BITCOIN_WALLET_COINSELECTION_H
 
-#include "../amount.h"
-#include "../policy/feerate.h"
-#include "../primitives/transaction.h"
-#include "../random.h"
+#include <amount.h>
+#include <policy/feerate.h>
+#include <primitives/transaction.h>
+#include <random.h>
 
 //! target minimum change amount
 static constexpr CAmount MIN_CHANGE{COIN / 100};

@@ -2,9 +2,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "coincontrol.h"
+#include <wallet/coincontrol.h>
 
-#include "../util/system.h"
+#include <util/system.h>
 
 void CCoinControl::SetNull()
 {

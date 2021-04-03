@@ -2,13 +2,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../../key.h"
-#include "../../node/context.h"
-#include "../../script/script.h"
-#include "../../script/standard.h"
-#include "../../test/util/setup_common.h"
-#include "../ismine.h"
-#include "../wallet.h"
+#include <key.h>
+#include <node/context.h>
+#include <script/script.h>
+#include <script/standard.h>
+#include <test/util/setup_common.h>
+#include <wallet/ismine.h>
+#include <wallet/wallet.h>
 
 #include <boost/test/unit_test.hpp>
 

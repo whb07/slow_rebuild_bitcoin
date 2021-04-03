@@ -3,11 +3,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "bdb.h"
-#include "db_.h"
+#include <wallet/bdb.h>
+#include <wallet/db.h>
 
-#include "../util/strencodings.h"
-#include "../util/translation.h"
+#include <util/strencodings.h>
+#include <util/translation.h>
 
 #include <stdint.h>
 

@@ -2,13 +2,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "sha256.h"
-#include "common.h"
+#include <crypto/sha256.h>
+#include <crypto/common.h>
 
 #include <assert.h>
 #include <string.h>
 
-#include "../compat/cpuid.h"
+#include <compat/cpuid.h>
 
 #if defined(__x86_64__) || defined(__amd64__) || defined(__i386__)
 #if defined(USE_ASM)
@@ -592,35 +592,35 @@ std::string SHA256AutoDetect()
         have_shani = (ebx >> 29) & 1;
     }
 
-//#if defined(ENABLE_SHANI) && !defined(BUILD_BITCOIN_INTERNAL)
-//    if (have_shani) {
-//        Transform = sha256_shani::Transform;
-//        TransformD64 = TransformD64Wrapper<sha256_shani::Transform>;
-//        TransformD64_2way = sha256d64_shani::Transform_2way;
-//        ret = "shani(1way,2way)";
-//        have_sse4 = false; // Disable SSE4/AVX2;
-//        have_avx2 = false;
-//    }
-//#endif
+#if defined(ENABLE_SHANI) && !defined(BUILD_BITCOIN_INTERNAL)
+    if (have_shani) {
+        Transform = sha256_shani::Transform;
+        TransformD64 = TransformD64Wrapper<sha256_shani::Transform>;
+        TransformD64_2way = sha256d64_shani::Transform_2way;
+        ret = "shani(1way,2way)";
+        have_sse4 = false; // Disable SSE4/AVX2;
+        have_avx2 = false;
+    }
+#endif
 
-//    if (have_sse4) {
-//#if defined(__x86_64__) || defined(__amd64__)
-//        Transform = sha256_sse4::Transform;
-//        TransformD64 = TransformD64Wrapper<sha256_sse4::Transform>;
-//        ret = "sse4(1way)";
-//#endif
-//#if defined(ENABLE_SSE41) && !defined(BUILD_BITCOIN_INTERNAL)
-//        TransformD64_4way = sha256d64_sse41::Transform_4way;
-//        ret += ",sse41(4way)";
-//#endif
-//    }
+    if (have_sse4) {
+#if defined(__x86_64__) || defined(__amd64__)
+        Transform = sha256_sse4::Transform;
+        TransformD64 = TransformD64Wrapper<sha256_sse4::Transform>;
+        ret = "sse4(1way)";
+#endif
+#if defined(ENABLE_SSE41) && !defined(BUILD_BITCOIN_INTERNAL)
+        TransformD64_4way = sha256d64_sse41::Transform_4way;
+        ret += ",sse41(4way)";
+#endif
+    }
 
-//#if defined(ENABLE_AVX2) && !defined(BUILD_BITCOIN_INTERNAL)
-//    if (have_avx2 && have_avx && enabled_avx) {
-//        TransformD64_8way = sha256d64_avx2::Transform_8way;
-//        ret += ",avx2(8way)";
-//    }
-//#endif
+#if defined(ENABLE_AVX2) && !defined(BUILD_BITCOIN_INTERNAL)
+    if (have_avx2 && have_avx && enabled_avx) {
+        TransformD64_8way = sha256d64_avx2::Transform_8way;
+        ret += ",avx2(8way)";
+    }
+#endif
 #endif
 
     assert(SelfTest());

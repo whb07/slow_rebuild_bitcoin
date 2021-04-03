@@ -5,7 +5,7 @@
 #ifndef BITCOIN_WALLET_SQLITE_H
 #define BITCOIN_WALLET_SQLITE_H
 
-#include "db_.h"
+#include <wallet/db.h>
 
 #include <sqlite3.h>
 

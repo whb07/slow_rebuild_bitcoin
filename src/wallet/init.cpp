@@ -3,24 +3,24 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../init.h"
-#include "../interfaces/chain.h"
-#include "../interfaces/wallet.h"
-#include "../net.h"
-#include "../node/context.h"
-#include "../node/ui_interface.h"
-#include "../outputtype.h"
-#include "univalue.h"
-#include "../util/check.h"
-#include "../util/moneystr.h"
-#include "../util/system.h"
-#include "../util/translation.h"
+#include <init.h>
+#include <interfaces/chain.h>
+#include <interfaces/wallet.h>
+#include <net.h>
+#include <node/context.h>
+#include <node/ui_interface.h>
+#include <outputtype.h>
+#include <univalue.h>
+#include <util/check.h>
+#include <util/moneystr.h>
+#include <util/system.h>
+#include <util/translation.h>
 #ifdef USE_BDB
-#include "bdb.h"
+#include <wallet/bdb.h>
 #endif
-#include "coincontrol.h"
-#include "wallet.h"
-#include "../walletinitinterface.h"
+#include <wallet/coincontrol.h>
+#include <wallet/wallet.h>
+#include <walletinitinterface.h>
 
 class WalletInit : public WalletInitInterface
 {

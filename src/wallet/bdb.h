@@ -6,13 +6,12 @@
 #ifndef BITCOIN_WALLET_BDB_H
 #define BITCOIN_WALLET_BDB_H
 
-#include "../clientversion.h"
-#include "../fs.h"
-#include "../serialize.h"
-#include "../streams.h"
-#include "../util/system.h"
-#include "db_.h"
-#include <db_cxx.h>
+#include <clientversion.h>
+#include <fs.h>
+#include <serialize.h>
+#include <streams.h>
+#include <util/system.h>
+#include <wallet/db.h>
 
 #include <atomic>
 #include <map>
@@ -21,17 +20,15 @@
 #include <unordered_map>
 #include <vector>
 
-//#if defined(__GNUC__) && !defined(__clang__)
-//#pragma GCC diagnostic push
-//#pragma GCC diagnostic ignored "-Wsuggest-override"
-//#endif
-////
-//#if defined(__GNUC__) && !defined(__clang__)
-//#pragma GCC diagnostic pop
-//#endif
-#ifndef DB_FILE_ID_LEN
-#define DB_FILE_ID_LEN 20
+#if defined(__GNUC__) && !defined(__clang__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wsuggest-override"
 #endif
+#include <db_cxx.h>
+#if defined(__GNUC__) && !defined(__clang__)
+#pragma GCC diagnostic pop
+#endif
+
 struct bilingual_str;
 
 static const unsigned int DEFAULT_WALLET_DBLOGSIZE = 100;

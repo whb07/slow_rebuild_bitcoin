@@ -2,16 +2,16 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "sqlite.h"
+#include <wallet/sqlite.h>
 
-#include "../chainparams.h"
-#include "../crypto/common.h"
-#include "../logging.h"
-#include "../sync.h"
-#include "../util/strencodings.h"
-#include "../util/system.h"
-#include "../util/translation.h"
-#include "db_.h"
+#include <chainparams.h>
+#include <crypto/common.h>
+#include <logging.h>
+#include <sync.h>
+#include <util/strencodings.h>
+#include <util/system.h>
+#include <util/translation.h>
+#include <wallet/db.h>
 
 #include <sqlite3.h>
 #include <stdint.h>

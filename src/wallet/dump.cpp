@@ -2,10 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "dump.h"
+#include <wallet/dump.h>
 
-#include "../util/translation.h"
-#include "wallet.h"
+#include <util/translation.h>
+#include <wallet/wallet.h>
 
 static const std::string DUMP_MAGIC = "BITCOIN_CORE_WALLET_DUMP";
 uint32_t DUMP_VERSION = 1;

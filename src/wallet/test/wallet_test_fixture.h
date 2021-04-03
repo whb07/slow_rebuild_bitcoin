@@ -5,13 +5,13 @@
 #ifndef BITCOIN_WALLET_TEST_WALLET_TEST_FIXTURE_H
 #define BITCOIN_WALLET_TEST_WALLET_TEST_FIXTURE_H
 
-#include "../../test/util/setup_common.h"
+#include <test/util/setup_common.h>
 
-#include "../../interfaces/chain.h"
-#include "../../interfaces/wallet.h"
-#include "../../node/context.h"
-#include "../../util/check.h"
-#include "../wallet.h"
+#include <interfaces/chain.h>
+#include <interfaces/wallet.h>
+#include <node/context.h>
+#include <util/check.h>
+#include <wallet/wallet.h>
 
 #include <memory>
 

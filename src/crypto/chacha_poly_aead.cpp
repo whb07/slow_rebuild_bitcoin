@@ -2,10 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "chacha_poly_aead.h"
+#include <crypto/chacha_poly_aead.h>
 
-#include "poly1305.h"
-#include "../support/cleanse.h"
+#include <crypto/poly1305.h>
+#include <support/cleanse.h>
 
 #include <assert.h>
 #include <string.h>

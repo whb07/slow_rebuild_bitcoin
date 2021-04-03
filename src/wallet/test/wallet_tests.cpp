@@ -2,27 +2,27 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../wallet.h"
+#include <wallet/wallet.h>
 
 #include <future>
 #include <memory>
 #include <stdint.h>
 #include <vector>
 
-#include "../../interfaces/chain.h"
-#include "../../node/context.h"
-#include "../../policy/policy.h"
-#include "../../rpc/server.h"
-#include "../../test/util/logging.h"
-#include "../../test/util/setup_common.h"
-#include "../../util/ref.h"
-#include "../../util/translation.h"
-#include "../../validation.h"
-#include "../coincontrol.h"
-#include "wallet_test_fixture.h"
+#include <interfaces/chain.h>
+#include <node/context.h>
+#include <policy/policy.h>
+#include <rpc/server.h>
+#include <test/util/logging.h>
+#include <test/util/setup_common.h>
+#include <util/ref.h>
+#include <util/translation.h>
+#include <validation.h>
+#include <wallet/coincontrol.h>
+#include <wallet/test/wallet_test_fixture.h>
 
 #include <boost/test/unit_test.hpp>
-#include "univalue.h"
+#include <univalue.h>
 
 RPCHelpMan importmulti();
 RPCHelpMan dumpwallet();

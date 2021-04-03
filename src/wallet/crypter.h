@@ -5,9 +5,9 @@
 #ifndef BITCOIN_WALLET_CRYPTER_H
 #define BITCOIN_WALLET_CRYPTER_H
 
-#include "../serialize.h"
-#include "../support/allocators/secure.h"
-#include "../script/signingprovider.h"
+#include <serialize.h>
+#include <support/allocators/secure.h>
+#include <script/signingprovider.h>
 
 
 const unsigned int WALLET_CRYPTO_KEY_SIZE = 32;

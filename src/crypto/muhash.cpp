@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "muhash.h"
+#include <crypto/muhash.h>
 
-#include "chacha20.h"
-#include "common.h"
-#include "../hash.h"
+#include <crypto/chacha20.h>
+#include <crypto/common.h>
+#include <hash.h>
 
 #include <cassert>
 #include <cstdio>

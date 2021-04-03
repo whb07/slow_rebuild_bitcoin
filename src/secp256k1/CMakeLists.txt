@@ -53,23 +53,16 @@ add_library(Secp256k1
         "src/scratch.h"
         "src/scratch_impl.h"
         "src/secp256k1.c"
-        "src/stamp-h1"
         "src/util.h"
         "src/modules/ecdh/main_impl.h"
         "src/modules/extrakeys/main_impl.h"
         "src/modules/recovery/main_impl.h"
         "src/modules/schnorrsig/main_impl.h"
 )
-#add_subdirectory("src/modules/ecdh")
-#add_subdirectory("src/modules/extrakeys")
-#add_subdirectory("src/modules/recovery")
-#add_subdirectory("src/modules/schnorrsig")
-# Define headers for this library. PUBLIC headers are used for
-# compiling the library and will be added to consumers" build
-# paths.
+
 target_include_directories(Secp256k1 PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-        $<INSTALL_INTERFACE:include>
+        $<INSTALL_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         PRIVATE src)
 
 target_compile_definitions(Secp256k1 PUBLIC USE_BASIC_CONFIG=1  ECMULT_GEN_PREC_BITS=8 USE_NUM_GMP=0 USE_WIDEMUL_64=1  ECMULT_WINDOW_SIZE=15 USE_FIELD_INV_BUILTIN=1 USE_SCALAR_INV_BUILTIN=1 )

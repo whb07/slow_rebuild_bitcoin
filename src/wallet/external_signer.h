@@ -7,8 +7,8 @@
 
 #include <stdexcept>
 #include <string>
-#include "univalue.h"
-#include "../util/system.h"
+#include <univalue.h>
+#include <util/system.h>
 
 struct PartiallySignedTransaction;
 

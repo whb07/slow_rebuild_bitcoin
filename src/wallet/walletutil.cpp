@@ -2,10 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "walletutil.h"
+#include <wallet/walletutil.h>
 
-#include "../logging.h"
-#include "../util/system.h"
+#include <logging.h>
+#include <util/system.h>
 
 fs::path GetWalletDir()
 {

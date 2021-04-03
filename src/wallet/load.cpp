@@ -3,18 +3,18 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "load.h"
+#include <wallet/load.h>
 
-#include "../fs.h"
-#include "../interfaces/chain.h"
-#include "../scheduler.h"
-#include "../util/string_.h"
-#include "../util/system.h"
-#include "../util/translation.h"
-#include "wallet.h"
-#include "walletdb.h"
+#include <fs.h>
+#include <interfaces/chain.h>
+#include <scheduler.h>
+#include <util/string_.h>
+#include <util/system.h>
+#include <util/translation.h>
+#include <wallet/wallet.h>
+#include <wallet/walletdb.h>
 
-#include "univalue.h"
+#include <univalue.h>
 
 bool VerifyWallets(interfaces::Chain& chain)
 {

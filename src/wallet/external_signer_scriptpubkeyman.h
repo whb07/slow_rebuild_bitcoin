@@ -6,7 +6,7 @@
 #define BITCOIN_WALLET_EXTERNAL_SIGNER_SCRIPTPUBKEYMAN_H
 
 #ifdef ENABLE_EXTERNAL_SIGNER
-#include "scriptpubkeyman.h"
+#include <wallet/scriptpubkeyman.h>
 
 class ExternalSignerScriptPubKeyMan : public DescriptorScriptPubKeyMan
 {

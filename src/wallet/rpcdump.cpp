@@ -2,29 +2,29 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../chain.h"
-#include "../core_io.h"
-#include "../interfaces/chain.h"
-#include "../key_io.h"
-#include "../merkleblock.h"
-#include "../rpc/util.h"
-#include "../script/descriptor.h"
-#include "../script/script.h"
-#include "../script/standard.h"
-#include "../sync.h"
-#include "../util/bip32.h"
-#include "../util/system.h"
-#include "../util/time_.h"
-#include "../util/translation.h"
-#include "rpcwallet.h"
-#include "wallet.h"
+#include <chain.h>
+#include <core_io.h>
+#include <interfaces/chain.h>
+#include <key_io.h>
+#include <merkleblock.h>
+#include <rpc/util.h>
+#include <script/descriptor.h>
+#include <script/script.h>
+#include <script/standard.h>
+#include <sync.h>
+#include <util/bip32.h>
+#include <util/system.h>
+#include <util/time_.h>
+#include <util/translation.h>
+#include <wallet/rpcwallet.h>
+#include <wallet/wallet.h>
 
 #include <stdint.h>
 #include <tuple>
 
 #include <boost/algorithm/string.hpp>
 
-#include "univalue.h"
+#include <univalue.h>
 
 
 

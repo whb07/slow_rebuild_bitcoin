@@ -1,4 +1,4 @@
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 add_library(
         Script bitcoinconsensus.cpp bitcoinconsensus.h descriptor.cpp descriptor.h
         interpreter.cpp interpreter.h keyorigin.h script.cpp script.h
@@ -6,5 +6,5 @@ add_library(
         signingprovider.cpp signingprovider.h standard.cpp standard.h
 )
 
-target_link_libraries(Script Primitives Util bitcoin-core )
+target_link_libraries(Script Primitives Util   )
 target_include_directories(Script PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

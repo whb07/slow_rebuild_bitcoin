@@ -2,15 +2,15 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../key_io.h"
-#include "../outputtype.h"
-#include "util.h"
-#include "../script/descriptor.h"
-#include "../script/signingprovider.h"
-#include "../tinyformat.h"
-#include "../util/strencodings.h"
-#include "../util/string_.h"
-#include "../util/translation.h"
+#include <key_io.h>
+#include <outputtype.h>
+#include <rpc/util.h>
+#include <script/descriptor.h>
+#include <script/signingprovider.h>
+#include <tinyformat.h>
+#include <util/strencodings.h>
+#include <util/string_.h>
+#include <util/translation.h>
 
 #include <tuple>
 

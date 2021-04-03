@@ -1,4 +1,4 @@
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 add_subdirectory(ctaes)
 add_library(Crypto aes.cpp aes.h chacha20.cpp chacha20.h chacha_poly_aead.cpp chacha_poly_aead.h common.h
         hkdf_sha256_32.cpp hkdf_sha256_32.h hmac_sha256.cpp hmac_sha256.h hmac_sha512.cpp hmac_sha512.h
@@ -8,4 +8,4 @@ add_library(Crypto aes.cpp aes.h chacha20.cpp chacha20.h chacha_poly_aead.cpp ch
         )
 target_include_directories(Crypto PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(Crypto Support bitcoin-core Ctaes)
+target_link_libraries(Crypto Ctaes)

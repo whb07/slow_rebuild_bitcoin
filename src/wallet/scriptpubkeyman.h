@@ -5,17 +5,17 @@
 #ifndef BITCOIN_WALLET_SCRIPTPUBKEYMAN_H
 #define BITCOIN_WALLET_SCRIPTPUBKEYMAN_H
 
-#include "../psbt.h"
-#include "../script/descriptor.h"
-#include "../script/signingprovider.h"
-#include "../script/standard.h"
-#include "../util/error.h"
-#include "../util/message.h"
-#include "../util/time_.h"
-#include "crypter.h"
-#include "ismine.h"
-#include "walletdb.h"
-#include "walletutil.h"
+#include <psbt.h>
+#include <script/descriptor.h>
+#include <script/signingprovider.h>
+#include <script/standard.h>
+#include <util/error.h>
+#include <util/message.h>
+#include <util/time_.h>
+#include <wallet/crypter.h>
+#include <wallet/ismine.h>
+#include <wallet/walletdb.h>
+#include <wallet/walletutil.h>
 
 #include <boost/signals2/signal.hpp>
 

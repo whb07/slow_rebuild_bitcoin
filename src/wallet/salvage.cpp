@@ -3,13 +3,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../fs.h"
-#include "../streams.h"
-#include "../util/translation.h"
-#include "bdb.h"
-#include "salvage.h"
-#include "wallet.h"
-#include "walletdb.h"
+#include <fs.h>
+#include <streams.h>
+#include <util/translation.h>
+#include <wallet/bdb.h>
+#include <wallet/salvage.h>
+#include <wallet/wallet.h>
+#include <wallet/walletdb.h>
 
 /* End of headers, beginning of key/value data */
 static const char *HEADER_END = "HEADER=END";

@@ -2,30 +2,30 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../interfaces/wallet.h"
+#include <interfaces/wallet.h>
 
-#include "../amount.h"
-#include "../interfaces/chain.h"
-#include "../interfaces/handler.h"
-#include "../policy/fees.h"
-#include "../primitives/transaction.h"
-#include "../rpc/server.h"
-#include "../script/standard.h"
-#include "../support/allocators/secure.h"
-#include "../sync.h"
-#include "../uint256.h"
-#include "../util/check.h"
-#include "../util/ref.h"
-#include "../util/system.h"
-#include "../util/ui_change_type.h"
-#include "context.h"
-#include "feebumper.h"
-#include "fees.h"
-#include "ismine.h"
-#include "load.h"
-#include "rpcsigner.h"
-#include "rpcwallet.h"
-#include "wallet.h"
+#include <amount.h>
+#include <interfaces/chain.h>
+#include <interfaces/handler.h>
+#include <policy/fees.h>
+#include <primitives/transaction.h>
+#include <rpc/server.h>
+#include <script/standard.h>
+#include <support/allocators/secure.h>
+#include <sync.h>
+#include <uint256.h>
+#include <util/check.h>
+#include <util/ref.h>
+#include <util/system.h>
+#include <util/ui_change_type.h>
+#include <wallet/context.h>
+#include <wallet/feebumper.h>
+#include <wallet/fees.h>
+#include <wallet/ismine.h>
+#include <wallet/load.h>
+#include <wallet/rpcsigner.h>
+#include <wallet/rpcwallet.h>
+#include <wallet/wallet.h>
 
 #include <memory>
 #include <string>

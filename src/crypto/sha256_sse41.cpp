@@ -7,7 +7,7 @@
 #include <stdint.h>
 #include <immintrin.h>
 
-#include "common.h"
+#include <crypto/common.h>
 
 namespace sha256d64_sse41 {
 namespace {

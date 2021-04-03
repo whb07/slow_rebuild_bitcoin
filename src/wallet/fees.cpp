@@ -3,10 +3,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "fees.h"
+#include <wallet/fees.h>
 
-#include "coincontrol.h"
-#include "wallet.h"
+#include <wallet/coincontrol.h>
+#include <wallet/wallet.h>
 
 
 CAmount GetRequiredFee(const CWallet& wallet, unsigned int nTxBytes)

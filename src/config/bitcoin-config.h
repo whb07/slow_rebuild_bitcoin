@@ -24,7 +24,7 @@
 #define CLIENT_VERSION_MINOR 99
 
 /* Copyright holder(s) before %s replacement */
-// #define COPYRIGHT_HOLDERS "The %s developers"
+#define COPYRIGHT_HOLDERS "The %s developers"
 
 /* Copyright holder(s) */
 #define COPYRIGHT_HOLDERS_FINAL "The Bitcoin Core developers"
@@ -292,7 +292,7 @@
 /* Define to 1 if std::system is available. */
 #define HAVE_STD__SYSTEM 1
 
-/* Define to 1 if you have the `strerror_r' function. */
+
 #define HAVE_STRERROR_R 1
 
 /* Define to 1 if you have the <strings.h> header file. */
@@ -411,10 +411,10 @@
 #define USE_ASM 1
 
 /* Define if BDB support should be compiled in */
-/* #undef USE_BDB */
+#define USE_BDB 1
 
 /* Define if dbus support should be compiled in */
-/* #undef USE_DBUS */
+#define USE_DBUS 1
 
 /* NAT-PMP support not compiled if undefined, otherwise value (0 or 1)
    determines default state */
@@ -424,7 +424,7 @@
 /* #undef USE_QRCODE */
 
 /* Define if sqlite support should be compiled in */
-#define USE_SQLITE 1
+//#define USE_SQLITE 0
 
 /* UPnP support not compiled if undefined, otherwise value (0 or 1) determines
    default state */
