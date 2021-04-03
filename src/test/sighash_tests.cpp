@@ -4,7 +4,7 @@
 
 #include <consensus/tx_check.h>
 #include <consensus/validation.h>
-#include "hash.h"
+#include <hash.h>
 #include <script/interpreter.h>
 #include <script/script.h>
 #include <serialize.h>

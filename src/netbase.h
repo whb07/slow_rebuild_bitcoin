@@ -6,13 +6,13 @@
 #define BITCOIN_NETBASE_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
-#include "compat.h"
-#include "netaddress.h"
-#include "serialize.h"
-#include "util/sock.h"
+#include <compat.h>
+#include <netaddress.h>
+#include <serialize.h>
+#include <util/sock.h>
 
 #include <functional>
 #include <memory>
@@ -194,7 +194,7 @@ extern std::function<std::unique_ptr<Sock>(const CService&)> CreateSock;
  * Try to connect to the specified service on the specified socket.
  *
  * @param addrConnect The service to which to connect.
- * @param hSocket The socket on which to connect.
+ * @param sock The socket on which to connect.
  * @param nTimeout Wait this many milliseconds for the connection to be
  *                 established.
  * @param manual_connection Whether or not the connection was manually requested
@@ -202,7 +202,7 @@ extern std::function<std::unique_ptr<Sock>(const CService&)> CreateSock;
  *
  * @returns Whether or not a connection was successfully made.
  */
-bool ConnectSocketDirectly(const CService &addrConnect, const SOCKET& hSocket, int nTimeout, bool manual_connection);
+bool ConnectSocketDirectly(const CService &addrConnect, const Sock& sock, int nTimeout, bool manual_connection);
 
 /**
  * Connect to a specified destination service through a SOCKS5 proxy by first

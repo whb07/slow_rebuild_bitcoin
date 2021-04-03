@@ -11,11 +11,11 @@
 #include <unordered_set>
 #include <vector>
 
-#include "primitives/block.h"
-#include "serialize.h"
-#include "uint256.h"
-#include "undo.h"
-#include "util/bytevectorhash.h"
+#include <primitives/block.h>
+#include <serialize.h>
+#include <uint256.h>
+#include <undo.h>
+#include <util/bytevectorhash.h>
 
 /**
  * This implements a Golomb-coded set as defined in BIP 158. It is a

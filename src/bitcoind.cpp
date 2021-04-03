@@ -4,26 +4,27 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
-#include "chainparams.h"
-#include "clientversion.h"
-#include "compat.h"
-#include "init.h"
-#include "interfaces/chain.h"
-#include "node/context.h"
-#include "node/ui_interface.h"
-#include "noui.h"
-#include "shutdown.h"
-#include "util/ref.h"
-#include "util/strencodings.h"
-#include "util/system.h"
-#include "util/threadnames.h"
-#include "util/tokenpipe.h"
-#include "util/translation.h"
-#include "util/url.h"
+#include <chainparams.h>
+#include <clientversion.h>
+#include <compat.h>
+#include <init.h>
+#include <interfaces/chain.h>
+#include <node/context.h>
+#include <node/ui_interface.h>
+#include <noui.h>
+#include <shutdown.h>
+#include <util/check.h>
+#include <util/strencodings.h>
+#include <util/system.h>
+#include <util/threadnames.h>
+#include <util/tokenpipe.h>
+#include <util/translation.h>
+#include <util/url.h>
 
+#include <any>
 #include <functional>
 #include <optional>
 
@@ -142,7 +143,7 @@ static bool AppInit(int argc, char* argv[])
     // end, which is interpreted as failure to start.
     TokenPipeEnd daemon_ep;
 #endif
-    util::Ref context{node};
+    std::any context{&node};
     try
     {
         if (!CheckDataDirOption()) {

@@ -2,13 +2,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../amount.h"
-#include "../coins.h"
-#include "../consensus/tx_verify.h"
-#include "psbt.h"
-#include "../policy/policy.h"
-#include "../policy/settings.h"
-#include "../tinyformat.h"
+#include <amount.h>
+#include <coins.h>
+#include <consensus/tx_verify.h>
+#include <node/psbt.h>
+#include <policy/policy.h>
+#include <policy/settings.h>
+#include <tinyformat.h>
 
 #include <numeric>
 

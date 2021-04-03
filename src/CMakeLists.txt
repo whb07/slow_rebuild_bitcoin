@@ -179,10 +179,10 @@ file(GLOB BITCOIN_CORE_H
         "util/settings.h"
         "util/sock.h"
         "util/spanparsing.h"
-        "util/string_.h"
+        "util/string.h"
         "util/system.h"
         "util/threadnames.h"
-        "util/time_.h"
+        "util/time.h"
         "util/tokenpipe.h"
         "util/trace.h"
         "util/translation.h"
@@ -378,8 +378,8 @@ add_library(lib_bitcoin_util STATIC
         util/threadnames.cpp
         util/spanparsing.cpp
         util/strencodings.cpp
-        util/string_.cpp
-        util/time_.cpp
+        util/string.cpp
+        util/time.cpp
         util/tokenpipe.cpp
         util/url.cpp
         ${BITCOIN_CORE_H})

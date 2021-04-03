@@ -8,7 +8,7 @@
 #include <test/fuzz/util.h>
 #include <test/util/setup_common.h>
 #include <txmempool.h>
-#include <util/time_.h>
+#include <util/time.h>
 #include <validation.h>
 
 #include <cstdint>

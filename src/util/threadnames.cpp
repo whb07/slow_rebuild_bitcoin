@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "../config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
 #include <thread>
@@ -13,7 +13,7 @@
 #include <pthread_np.h>
 #endif
 
-#include "threadnames.h"
+#include <util/threadnames.h>
 
 #ifdef HAVE_SYS_PRCTL_H
 #include <sys/prctl.h> // For prctl, PR_SET_NAME, PR_GET_NAME

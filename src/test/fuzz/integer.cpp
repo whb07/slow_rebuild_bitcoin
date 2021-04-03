@@ -28,9 +28,9 @@
 #include <util/check.h>
 #include <util/moneystr.h>
 #include <util/strencodings.h>
-#include <util/string_.h>
+#include <util/string.h>
 #include <util/system.h>
-#include <util/time_.h>
+#include <util/time.h>
 #include <version.h>
 
 #include <cassert>

@@ -7,26 +7,26 @@
 #define BITCOIN_VALIDATION_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
-#include "amount.h"
-#include "attributes.h"
-#include "coins.h"
-#include "consensus/validation.h"
-#include "crypto/common.h" // for ReadLE64
-#include "fs.h"
-#include "node/utxo_snapshot.h"
-#include "policy/feerate.h"
-#include "protocol.h" // For CMessageHeader::MessageStartChars
-#include "script/script_error.h"
-#include "sync.h"
-#include "txmempool.h" // For CTxMemPool::cs
-#include "txdb.h"
-#include "versionbits.h"
-#include "serialize.h"
-#include "util/check.h"
-#include "util/hasher.h"
+#include <amount.h>
+#include <attributes.h>
+#include <coins.h>
+#include <consensus/validation.h>
+#include <crypto/common.h> // for ReadLE64
+#include <fs.h>
+#include <node/utxo_snapshot.h>
+#include <policy/feerate.h>
+#include <protocol.h> // For CMessageHeader::MessageStartChars
+#include <script/script_error.h>
+#include <sync.h>
+#include <txmempool.h> // For CTxMemPool::cs
+#include <txdb.h>
+#include <versionbits.h>
+#include <serialize.h>
+#include <util/check.h>
+#include <util/hasher.h>
 
 #include <atomic>
 #include <map>
@@ -457,7 +457,7 @@ public:
         const CChainParams& chainparams,
         CBlockIndex** ppindex) EXCLUSIVE_LOCKS_REQUIRED(cs_main);
 
-    CBlockIndex* LookupBlockIndex(const uint256& hash) EXCLUSIVE_LOCKS_REQUIRED(cs_main);
+    CBlockIndex* LookupBlockIndex(const uint256& hash) const EXCLUSIVE_LOCKS_REQUIRED(cs_main);
 
     /** Find the last common block between the parameter chain and a locator. */
     CBlockIndex* FindForkInGlobalIndex(const CChain& chain, const CBlockLocator& locator) EXCLUSIVE_LOCKS_REQUIRED(cs_main);

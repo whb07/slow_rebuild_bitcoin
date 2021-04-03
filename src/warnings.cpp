@@ -3,12 +3,12 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "warnings.h"
+#include <warnings.h>
 
-#include "sync.h"
-#include "util/string_.h"
-#include "util/system.h"
-#include "util/translation.h"
+#include <sync.h>
+#include <util/string.h>
+#include <util/system.h>
+#include <util/translation.h>
 
 #include <vector>
 

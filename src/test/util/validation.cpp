@@ -5,7 +5,7 @@
 #include <test/util/validation.h>
 
 #include <util/check.h>
-#include <util/time_.h>
+#include <util/time.h>
 #include <validation.h>
 
 void TestChainState::ResetIbd()

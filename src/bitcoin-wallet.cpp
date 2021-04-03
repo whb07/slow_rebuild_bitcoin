@@ -3,16 +3,16 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
-#include "chainparams.h"
-#include "chainparamsbase.h"
-#include "logging.h"
-#include "util/system.h"
-#include "util/translation.h"
-#include "util/url.h"
-#include "wallet/wallettool.h"
+#include <chainparams.h>
+#include <chainparamsbase.h>
+#include <logging.h>
+#include <util/system.h>
+#include <util/translation.h>
+#include <util/url.h>
+#include <wallet/wallettool.h>
 
 #include <functional>
 

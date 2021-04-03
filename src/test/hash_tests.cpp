@@ -4,7 +4,7 @@
 
 #include <clientversion.h>
 #include <crypto/siphash.h>
-#include "hash.h"
+#include <hash.h>
 #include <test/util/setup_common.h>
 #include <util/strencodings.h>
 

@@ -9,7 +9,7 @@
 #include <chain.h>
 #include <rpc/blockchain.h>
 #include <test/util/setup_common.h>
-#include <util/string_.h>
+#include <util/string.h>
 
 /* Equality between doubles is imprecise. Comparison should be done
  * with a small threshold of tolerance, rather than exact equality.

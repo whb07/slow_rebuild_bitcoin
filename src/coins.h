@@ -6,13 +6,13 @@
 #ifndef BITCOIN_COINS_H
 #define BITCOIN_COINS_H
 
-#include "compressor.h"
-#include "core_memusage.h"
-#include "memusage.h"
-#include "primitives/transaction.h"
-#include "serialize.h"
-#include "uint256.h"
-#include "util/hasher.h"
+#include <compressor.h>
+#include <core_memusage.h>
+#include <memusage.h>
+#include <primitives/transaction.h>
+#include <serialize.h>
+#include <uint256.h>
+#include <util/hasher.h>
 
 #include <assert.h>
 #include <stdint.h>
@@ -75,6 +75,9 @@ public:
         ::Unserialize(s, Using<TxOutCompression>(out));
     }
 
+    /** Either this coin never existed (see e.g. coinEmpty in coins.cpp), or it
+      * did exist and has been spent.
+      */
     bool IsSpent() const {
         return out.IsNull();
     }
@@ -223,7 +226,6 @@ protected:
     mutable size_t cachedCoinsUsage;
 
 public:
-    virtual ~CCoinsViewCache() {}
     CCoinsViewCache(CCoinsView *baseIn);
 
     /**

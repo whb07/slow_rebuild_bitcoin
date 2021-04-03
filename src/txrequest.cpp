@@ -2,13 +2,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "txrequest.h"
+#include <txrequest.h>
 
-#include "crypto/siphash.h"
-#include "net.h"
-#include "primitives/transaction.h"
-#include "random.h"
-#include "uint256.h"
+#include <crypto/siphash.h>
+#include <net.h>
+#include <primitives/transaction.h>
+#include <random.h>
+#include <uint256.h>
 
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/ordered_index.hpp>

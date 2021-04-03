@@ -22,7 +22,7 @@ add_library(Secp256k1
         "src/ecmult_gen.h"
         "src/ecmult_gen_impl.h"
         "src/ecmult_impl.h"
-        "src/ecmult_static_context.h"
+#        "src/ecmult_static_context.h"
         "src/field.h"
         "src/field_10x26.h"
         "src/field_10x26_impl.h"
@@ -65,5 +65,17 @@ target_include_directories(Secp256k1 PUBLIC
         $<INSTALL_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         PRIVATE src)
 
-target_compile_definitions(Secp256k1 PUBLIC USE_BASIC_CONFIG=1  ECMULT_GEN_PREC_BITS=8 USE_NUM_GMP=0 USE_WIDEMUL_64=1  ECMULT_WINDOW_SIZE=15 USE_FIELD_INV_BUILTIN=1 USE_SCALAR_INV_BUILTIN=1 )
+target_compile_definitions(Secp256k1 PUBLIC
+        USE_BASIC_CONFIG=1
+        ECMULT_GEN_PREC_BITS=8
+        USE_NUM_GMP=0
+        USE_WIDEMUL_64=1
+        ECMULT_WINDOW_SIZE=15
+        USE_FIELD_INV_BUILTIN=1
+        USE_SCALAR_INV_BUILTIN=1
+        ENABLE_MODULE_ECDH=1
+        ENABLE_MODULE_RECOVERY=1
+        ENABLE_MODULE_EXTRAKEYS=1
+        ENABLE_MODULE_SCHNORRSIG=1)
+
 target_link_libraries(Secp256k1 gmp)

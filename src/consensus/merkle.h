@@ -7,8 +7,8 @@
 
 #include <vector>
 
-#include "../primitives/block.h"
-#include "../uint256.h"
+#include <primitives/block.h>
+#include <uint256.h>
 
 uint256 ComputeMerkleRoot(std::vector<uint256> hashes, bool* mutated = nullptr);
 

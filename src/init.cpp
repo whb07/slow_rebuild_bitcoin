@@ -4,66 +4,66 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
-#include "init.h"
+#include <init.h>
 
-#include "addrman.h"
-#include "amount.h"
-#include "banman.h"
-#include "blockfilter.h"
-#include "chain.h"
-#include "chainparams.h"
-//#include <compat/sanity.h>
-#include "consensus/validation.h"
-#include "fs.h"
-#include "hash.h"
-#include "httprpc.h"
-#include "httpserver.h"
-#include "index/blockfilterindex.h"
-#include "index/txindex.h"
-#include "interfaces/chain.h"
-#include "interfaces/node.h"
-#include "key.h"
-#include "mapport.h"
-#include "miner.h"
-#include "net.h"
-#include "net_permissions.h"
-#include "net_processing.h"
-#include "netbase.h"
-#include "node/context.h"
-#include "node/ui_interface.h"
-#include "policy/feerate.h"
-#include "policy/fees.h"
-#include "policy/policy.h"
-#include "policy/settings.h"
-#include "protocol.h"
-#include "rpc/blockchain.h"
-#include "rpc/register.h"
-#include "rpc/server.h"
-#include "rpc/util.h"
-#include "scheduler.h"
-#include "script/sigcache.h"
-#include "script/standard.h"
-#include "shutdown.h"
-#include "sync.h"
-#include "timedata.h"
-#include "torcontrol.h"
-#include "txdb.h"
-#include "txmempool.h"
-#include "txorphanage.h"
-#include "util/asmap.h"
-#include "util/check.h"
-#include "util/moneystr.h"
-#include "util/string_.h"
-#include "util/system.h"
-#include "util/threadnames.h"
-#include "util/translation.h"
-#include "validation.h"
+#include <addrman.h>
+#include <amount.h>
+#include <banman.h>
+#include <blockfilter.h>
+#include <chain.h>
+#include <chainparams.h>
+#include <compat/sanity.h>
+#include <consensus/validation.h>
+#include <fs.h>
+#include <hash.h>
+#include <httprpc.h>
+#include <httpserver.h>
+#include <index/blockfilterindex.h>
+#include <index/txindex.h>
+#include <interfaces/chain.h>
+#include <interfaces/node.h>
+#include <key.h>
+#include <mapport.h>
+#include <miner.h>
+#include <net.h>
+#include <net_permissions.h>
+#include <net_processing.h>
+#include <netbase.h>
+#include <node/context.h>
+#include <node/ui_interface.h>
+#include <policy/feerate.h>
+#include <policy/fees.h>
+#include <policy/policy.h>
+#include <policy/settings.h>
+#include <protocol.h>
+#include <rpc/blockchain.h>
+#include <rpc/register.h>
+#include <rpc/server.h>
+#include <rpc/util.h>
+#include <scheduler.h>
+#include <script/sigcache.h>
+#include <script/standard.h>
+#include <shutdown.h>
+#include <sync.h>
+#include <timedata.h>
+#include <torcontrol.h>
+#include <txdb.h>
+#include <txmempool.h>
+#include <txorphanage.h>
+#include <util/asmap.h>
+#include <util/check.h>
+#include <util/moneystr.h>
+#include <util/string.h>
+#include <util/system.h>
+#include <util/threadnames.h>
+#include <util/translation.h>
+#include <validation.h>
 
-#include "validationinterface.h"
-#include "walletinitinterface.h"
+#include <validationinterface.h>
+#include <walletinitinterface.h>
 
 #include <functional>
 #include <set>
@@ -73,7 +73,7 @@
 #include <vector>
 
 #ifndef WIN32
-#include "attributes.h"
+#include <attributes.h>
 #include <cerrno>
 #include <signal.h>
 #include <sys/stat.h>
@@ -228,6 +228,7 @@ void Shutdown(NodeContext& node)
     node.peerman.reset();
     node.connman.reset();
     node.banman.reset();
+    node.addrman.reset();
 
     if (node.mempool && node.mempool->IsLoaded() && node.args->GetArg("-persistmempool", DEFAULT_PERSIST_MEMPOOL)) {
         DumpMempool(*node.mempool);
@@ -773,8 +774,8 @@ static bool InitSanityCheck()
         return InitError(Untranslated("Elliptic curve cryptography sanity check failure. Aborting."));
     }
 
-//    if (!glibcxx_sanity_test())
-//        return false;
+    if (!glibcxx_sanity_test())
+        return false;
 
     if (!Random_SanityCheck()) {
         return InitError(Untranslated("OS cryptographic RNG sanity check failure. Aborting."));
@@ -787,7 +788,7 @@ static bool InitSanityCheck()
     return true;
 }
 
-static bool AppInitServers(const util::Ref& context, NodeContext& node)
+static bool AppInitServers(const std::any& context, NodeContext& node)
 {
     const ArgsManager& args = *Assert(node.args);
     RPCServer::OnStarted(&OnRPCStarted);
@@ -1276,7 +1277,7 @@ bool AppInitInterfaces(NodeContext& node)
     return true;
 }
 
-bool AppInitMain(const util::Ref& context, NodeContext& node, interfaces::BlockAndHeaderTipInfo* tip_info)
+bool AppInitMain(const std::any& context, NodeContext& node, interfaces::BlockAndHeaderTipInfo* tip_info)
 {
     const ArgsManager& args = *Assert(node.args);
     const CChainParams& chainparams = Params();
@@ -1308,7 +1309,7 @@ bool AppInitMain(const util::Ref& context, NodeContext& node, interfaces::BlockA
         LogPrintf("Config file: %s\n", config_file_path.string());
     } else if (args.IsArgSet("-conf")) {
         // Warn if no conf file exists at path provided by user
-        InitWarning(strprintf(_("The specified config file %s does not exist\n"), config_file_path.string()));
+        InitWarning(strprintf(_("The specified config file %s does not exist"), config_file_path.string()));
     } else {
         // Not categorizing as "Warning" because it's the default behavior
         LogPrintf("Config file: %s (not found, skipping)\n", config_file_path.string());
@@ -1402,10 +1403,12 @@ bool AppInitMain(const util::Ref& context, NodeContext& node, interfaces::BlockA
     fDiscover = args.GetBoolArg("-discover", true);
     const bool ignores_incoming_txs{args.GetBoolArg("-blocksonly", DEFAULT_BLOCKSONLY)};
 
+    assert(!node.addrman);
+    node.addrman = std::make_unique<CAddrMan>();
     assert(!node.banman);
     node.banman = std::make_unique<BanMan>(GetDataDir() / "banlist.dat", &uiInterface, args.GetArg("-bantime", DEFAULT_MISBEHAVING_BANTIME));
     assert(!node.connman);
-    node.connman = std::make_unique<CConnman>(GetRand(std::numeric_limits<uint64_t>::max()), GetRand(std::numeric_limits<uint64_t>::max()), args.GetBoolArg("-networkactive", true));
+    node.connman = std::make_unique<CConnman>(GetRand(std::numeric_limits<uint64_t>::max()), GetRand(std::numeric_limits<uint64_t>::max()), *node.addrman, args.GetBoolArg("-networkactive", true));
 
     assert(!node.fee_estimator);
     // Don't initialize fee estimation with old data if we don't relay transactions,
@@ -1421,7 +1424,7 @@ bool AppInitMain(const util::Ref& context, NodeContext& node, interfaces::BlockA
     ChainstateManager& chainman = *Assert(node.chainman);
 
     assert(!node.peerman);
-    node.peerman = PeerManager::make(chainparams, *node.connman, node.banman.get(),
+    node.peerman = PeerManager::make(chainparams, *node.connman, *node.addrman, node.banman.get(),
                                      *node.scheduler, chainman, *node.mempool, ignores_incoming_txs);
     RegisterValidationInterface(node.peerman.get());
 

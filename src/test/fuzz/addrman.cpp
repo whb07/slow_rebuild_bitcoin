@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <addrdb.h>
-#include "addrman.h"
+#include <addrman.h>
 #include <chainparams.h>
 #include <merkleblock.h>
 #include <test/fuzz/FuzzedDataProvider.h>
@@ -104,7 +104,7 @@ FUZZ_TARGET_INIT(addrman, initialize_addrman)
             [&] {
                 const std::optional<CService> opt_service = ConsumeDeserializable<CService>(fuzzed_data_provider);
                 if (opt_service) {
-                    addr_man.SetServices(*opt_service, ServiceFlags{fuzzed_data_provider.ConsumeIntegral<uint64_t>()});
+                    addr_man.SetServices(*opt_service, ConsumeWeakEnum(fuzzed_data_provider, ALL_SERVICE_FLAGS));
                 }
             },
             [&] {

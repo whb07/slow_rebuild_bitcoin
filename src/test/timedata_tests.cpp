@@ -8,7 +8,7 @@
 #include <test/util/logging.h>
 #include <test/util/setup_common.h>
 #include <timedata.h>
-#include <util/string_.h>
+#include <util/string.h>
 #include <util/translation.h>
 #include <warnings.h>
 

@@ -6,20 +6,15 @@
 #ifndef BITCOIN_TXDB_H
 #define BITCOIN_TXDB_H
 
-#include "coins.h"
-#include "dbwrapper.h"
-#include "chain.h"
-#include "primitives/block.h"
+#include <coins.h>
+#include <dbwrapper.h>
+#include <chain.h>
+#include <primitives/block.h>
 
 #include <memory>
 #include <string>
 #include <utility>
 #include <vector>
-
-#include "leveldb/db.h"
-#include "leveldb/write_batch.h"
-#include "leveldb/env.h"
-
 
 class CBlockIndex;
 class CCoinsViewDBCursor;

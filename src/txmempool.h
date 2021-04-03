@@ -14,15 +14,15 @@
 #include <utility>
 #include <vector>
 
-#include "amount.h"
-#include "coins.h"
-#include "indirectmap.h"
-#include "policy/feerate.h"
-#include "primitives/transaction.h"
-#include "random.h"
-#include "sync.h"
-#include "util/epochguard.h"
-#include "util/hasher.h"
+#include <amount.h>
+#include <coins.h>
+#include <indirectmap.h>
+#include <policy/feerate.h>
+#include <primitives/transaction.h>
+#include <random.h>
+#include <sync.h>
+#include <util/epochguard.h>
+#include <util/hasher.h>
 
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/hashed_index.hpp>
@@ -476,7 +476,7 @@ enum class MemPoolRemovalReason {
  */
 class CTxMemPool
 {
-private:
+protected:
     const int m_check_ratio; //!< Value n means that 1 times in n we check.
     std::atomic<unsigned int> nTransactionsUpdated{0}; //!< Used by getblocktemplate to trigger CreateNewBlock() invocation
     CBlockPolicyEstimator* minerPolicyEstimator;

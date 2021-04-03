@@ -9,25 +9,23 @@
  */
 #ifndef BITCOIN_UTIL_SYSTEM_H
 #define BITCOIN_UTIL_SYSTEM_H
-#include <boost/filesystem.hpp>
-#include <boost/filesystem/exception.hpp>
-#include <boost/filesystem/path.hpp>
 
 #if defined(HAVE_CONFIG_H)
-#include "../config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
-#include "../attributes.h"
-//#include "../compat.h"
-//#include "../compat/assumptions.h"
-#include "../fs.h"
-#include "../logging.h"
-#include "../sync.h"
-#include "../tinyformat.h"
-#include "settings.h"
-#include "threadnames.h"
-#include "time_.h"
+#include <attributes.h>
+#include <compat.h>
+#include <compat/assumptions.h>
+#include <fs.h>
+#include <logging.h>
+#include <sync.h>
+#include <tinyformat.h>
+#include <util/settings.h>
+#include <util/threadnames.h>
+#include <util/time.h>
 
+#include <any>
 #include <exception>
 #include <map>
 #include <optional>
@@ -501,6 +499,18 @@ inline void insert(Tdst& dst, const Tsrc& src) {
 template <typename TsetT, typename Tsrc>
 inline void insert(std::set<TsetT>& dst, const Tsrc& src) {
     dst.insert(src.begin(), src.end());
+}
+
+/**
+ * Helper function to access the contained object of a std::any instance.
+ * Returns a pointer to the object if passed instance has a value and the type
+ * matches, nullptr otherwise.
+ */
+template<typename T>
+T* AnyPtr(const std::any& any) noexcept
+{
+    T* const* ptr = std::any_cast<T*>(&any);
+    return ptr ? *ptr : nullptr;
 }
 
 #ifdef WIN32

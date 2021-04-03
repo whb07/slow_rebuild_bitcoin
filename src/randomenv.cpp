@@ -4,16 +4,16 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
-#include "randomenv.h"
+#include <randomenv.h>
 
-#include "clientversion.h"
-#include "compat/cpuid.h"
-#include "crypto/sha512.h"
-#include "support/cleanse.h"
-#include "util/time_.h" // for GetTime()
+#include <clientversion.h>
+#include <compat/cpuid.h>
+#include <crypto/sha512.h>
+#include <support/cleanse.h>
+#include <util/time.h> // for GetTime()
 #ifdef WIN32
 #include <compat.h> // for Windows API
 #endif
@@ -38,7 +38,7 @@
 #include <sys/utsname.h>
 #include <unistd.h>
 #endif
-#if HAVE_DECL_GETIFADDRS
+#if HAVE_DECL_GETIFADDRS && HAVE_DECL_FREEIFADDRS
 #include <ifaddrs.h>
 #endif
 #if HAVE_SYSCTL
@@ -361,7 +361,7 @@ void RandAddStaticEnv(CSHA512& hasher)
         hasher.Write((const unsigned char*)hname, strnlen(hname, 256));
     }
 
-#if HAVE_DECL_GETIFADDRS
+#if HAVE_DECL_GETIFADDRS && HAVE_DECL_FREEIFADDRS
     // Network interfaces
     struct ifaddrs *ifad = NULL;
     getifaddrs(&ifad);

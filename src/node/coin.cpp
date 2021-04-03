@@ -2,15 +2,16 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "coin.h"
+#include <node/coin.h>
 
-#include "context.h"
-#include "../txmempool.h"
-#include "../validation.h"
+#include <node/context.h>
+#include <txmempool.h>
+#include <validation.h>
 
 void FindCoins(const NodeContext& node, std::map<COutPoint, Coin>& coins)
 {
     assert(node.mempool);
+    assert(node.chainman);
     LOCK2(cs_main, node.mempool->cs);
     assert(std::addressof(::ChainstateActive()) == std::addressof(node.chainman->ActiveChainstate()));
     CCoinsViewCache& chain_view = node.chainman->ActiveChainstate().CoinsTip();

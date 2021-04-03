@@ -2,10 +2,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "tx_check.h"
+#include <consensus/tx_check.h>
 
-#include "../primitives/transaction.h"
-#include "validation.h"
+#include <primitives/transaction.h>
+#include <consensus/validation.h>
 
 bool CheckTransaction(const CTransaction& tx, TxValidationState& state)
 {

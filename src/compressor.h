@@ -6,10 +6,10 @@
 #ifndef BITCOIN_COMPRESSOR_H
 #define BITCOIN_COMPRESSOR_H
 
-#include "primitives/transaction.h"
-#include "script/script.h"
-#include "serialize.h"
-#include "span.h"
+#include <primitives/transaction.h>
+#include <script/script.h>
+#include <serialize.h>
+#include <span.h>
 
 bool CompressScript(const CScript& script, std::vector<unsigned char> &out);
 unsigned int GetSpecialScriptSize(unsigned int nSize);

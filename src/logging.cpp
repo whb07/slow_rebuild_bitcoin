@@ -3,15 +3,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "logging.h"
-#include "util/threadnames.h"
-#include "util/string_.h"
-#include "util/time_.h"
-#include <boost/filesystem.hpp>
-#include <boost/filesystem/fstream.hpp>
-#include <boost/filesystem/exception.hpp>
-#include <boost/filesystem/path.hpp>
-#include <boost/filesystem/operations.hpp>
+#include <logging.h>
+#include <util/threadnames.h>
+#include <util/string.h>
+#include <util/time.h>
 
 #include <mutex>
 

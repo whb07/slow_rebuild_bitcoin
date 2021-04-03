@@ -3,21 +3,19 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "system.h"
+#include <util/system.h>
 
 #ifdef ENABLE_EXTERNAL_SIGNER
 #include <boost/process.hpp>
 #endif // ENABLE_EXTERNAL_SIGNER
 
-#include "../chainparamsbase.h"
-#include "../sync.h"
-#include "check.h"
-#include "getuniquepath.h"
-#include "strencodings.h"
-#include "string_.h"
-#include "translation.h"
-
-
+#include <chainparamsbase.h>
+#include <sync.h>
+#include <util/check.h>
+#include <util/getuniquepath.h>
+#include <util/strencodings.h>
+#include <util/string.h>
+#include <util/translation.h>
 
 
 #if (defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__DragonFly__))
@@ -68,10 +66,9 @@
 #endif
 
 #include <boost/algorithm/string/replace.hpp>
-
 #include <thread>
 #include <typeinfo>
-#include "univalue.h"
+#include <univalue.h>
 
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();

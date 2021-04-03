@@ -3,18 +3,18 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
-#include "mapport.h"
+#include <mapport.h>
 
-#include "clientversion.h"
-#include "logging.h"
-#include "net.h"
-#include "netaddress.h"
-#include "netbase.h"
-#include "threadinterrupt.h"
-#include "util/system.h"
+#include <clientversion.h>
+#include <logging.h>
+#include <net.h>
+#include <netaddress.h>
+#include <netbase.h>
+#include <threadinterrupt.h>
+#include <util/system.h>
 
 #ifdef USE_NATPMP
 #include <compat.h>

@@ -6,11 +6,11 @@
 #ifndef BITCOIN_SCRIPT_SIGNINGPROVIDER_H
 #define BITCOIN_SCRIPT_SIGNINGPROVIDER_H
 
-#include "../key.h"
-#include "../pubkey.h"
-#include "script.h"
-#include "standard.h"
-#include "../sync.h"
+#include <key.h>
+#include <pubkey.h>
+#include <script/script.h>
+#include <script/standard.h>
+#include <sync.h>
 
 struct KeyOriginInfo;
 

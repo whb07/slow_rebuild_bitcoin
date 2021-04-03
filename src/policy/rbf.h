@@ -5,7 +5,7 @@
 #ifndef BITCOIN_POLICY_RBF_H
 #define BITCOIN_POLICY_RBF_H
 
-#include "../txmempool.h"
+#include <txmempool.h>
 
 /** The rbf state of unconfirmed transactions */
 enum class RBFTransactionState {

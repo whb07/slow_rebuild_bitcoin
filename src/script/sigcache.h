@@ -6,9 +6,9 @@
 #ifndef BITCOIN_SCRIPT_SIGCACHE_H
 #define BITCOIN_SCRIPT_SIGCACHE_H
 
-#include "interpreter.h"
-#include "../span.h"
-#include "../util/hasher.h"
+#include <script/interpreter.h>
+#include <span.h>
+#include <util/hasher.h>
 
 #include <vector>
 

@@ -3,14 +3,12 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "pubkey.h"
+#include <pubkey.h>
 
-#include "secp256k1.h"
+#include <secp256k1.h>
+#include <secp256k1_recovery.h>
+#include <secp256k1_schnorrsig.h>
 
-#include "secp256k1_recovery.h"
-#include "secp256k1/src/modules/recovery/main_impl.h"
-#include "secp256k1_schnorrsig.h"
-#include "secp256k1/src/modules/schnorrsig/main_impl.h"
 namespace
 {
 /* Global secp256k1_context object used for verification. */

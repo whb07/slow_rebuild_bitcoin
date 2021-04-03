@@ -3,11 +3,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "noui.h"
+#include <noui.h>
 
-#include "logging.h"
-#include "node/ui_interface.h"
-#include "util/translation.h"
+#include <logging.h>
+#include <node/ui_interface.h>
+#include <util/translation.h>
 
 #include <string>
 

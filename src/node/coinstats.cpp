@@ -3,18 +3,19 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "coinstats.h"
+#include <node/coinstats.h>
 
-#include "../coins.h"
-#include "../crypto/muhash.h"
-#include "../hash.h"
-#include "../serialize.h"
-#include "../uint256.h"
-#include "../util/system.h"
-#include "validation.h"
+#include <coins.h>
+#include <crypto/muhash.h>
+#include <hash.h>
+#include <serialize.h>
+#include <uint256.h>
+#include <util/system.h>
+#include <validation.h>
 
 #include <map>
 
+// Database-independent metric indicating the UTXO set size
 static uint64_t GetBogoSize(const CScript& scriptPubKey)
 {
     return 32 /* txid */ +

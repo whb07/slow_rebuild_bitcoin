@@ -5,13 +5,13 @@
 #ifndef BITCOIN_INTERFACES_WALLET_H
 #define BITCOIN_INTERFACES_WALLET_H
 
-#include "../amount.h"                    // For CAmount
-#include "chain.h"          // For ChainClient
-#include "../pubkey.h"                    // For CKeyID and CScriptID (definitions needed in CTxDestination instantiation)
-#include "../script/standard.h"           // For CTxDestination
-#include "../support/allocators/secure.h" // For SecureString
-#include "../util/message.h"
-#include "../util/ui_change_type.h"
+#include <amount.h>                    // For CAmount
+#include <interfaces/chain.h>          // For ChainClient
+#include <pubkey.h>                    // For CKeyID and CScriptID (definitions needed in CTxDestination instantiation)
+#include <script/standard.h>           // For CTxDestination
+#include <support/allocators/secure.h> // For SecureString
+#include <util/message.h>
+#include <util/ui_change_type.h>
 
 #include <functional>
 #include <map>

@@ -3,10 +3,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "strencodings.h"
-#include "string_.h"
+#include <util/strencodings.h>
+#include <util/string.h>
 
-#include "../tinyformat.h"
+#include <tinyformat.h>
 
 #include <algorithm>
 #include <cstdlib>

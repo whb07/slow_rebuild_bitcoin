@@ -5,9 +5,9 @@
 #ifndef BITCOIN_SIGNET_H
 #define BITCOIN_SIGNET_H
 
-#include "consensus/params.h"
-#include "primitives/block.h"
-#include "primitives/transaction.h"
+#include <consensus/params.h>
+#include <primitives/block.h>
+#include <primitives/transaction.h>
 
 #include <optional>
 

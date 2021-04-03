@@ -9,7 +9,7 @@
 #include <test/util/setup_common.h>
 #include <uint256.h>
 #include <util/strencodings.h>
-#include <util/string_.h>
+#include <util/string.h>
 #include <util/system.h>
 
 #include <string>

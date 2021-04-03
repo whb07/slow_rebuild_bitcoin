@@ -6,13 +6,13 @@
 #include <sstream>
 #include <set>
 
-#include "blockfilter.h"
-#include "crypto/siphash.h"
-#include "hash.h"
-#include "primitives/transaction.h"
-#include "script/script.h"
-#include "streams.h"
-#include "util/golombrice.h"
+#include <blockfilter.h>
+#include <crypto/siphash.h>
+#include <hash.h>
+#include <primitives/transaction.h>
+#include <script/script.h>
+#include <streams.h>
+#include <util/golombrice.h>
 
 /// SerType used to serialize parameters in GCS filter encoding.
 static constexpr int GCS_SER_TYPE = SER_NETWORK;

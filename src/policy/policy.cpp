@@ -5,11 +5,11 @@
 
 // NOTE: This file is intended to be customised by the end user, and includes only local node policy logic
 
-#include "policy.h"
+#include <policy/policy.h>
 
-#include "../consensus/validation.h"
-#include "../coins.h"
-#include "../span.h"
+#include <consensus/validation.h>
+#include <coins.h>
+#include <span.h>
 
 CAmount GetDustThreshold(const CTxOut& txout, const CFeeRate& dustRelayFeeIn)
 {

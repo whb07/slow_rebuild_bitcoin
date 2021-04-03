@@ -7,7 +7,7 @@
 #include <base58.h>
 #include <psbt.h>
 #include <util/strencodings.h>
-#include <util/string_.h>
+#include <util/string.h>
 
 #include <cassert>
 #include <cstdint>

@@ -6,10 +6,10 @@
 #define BITCOIN_UTIL_CHECK_H
 
 #if defined(HAVE_CONFIG_H)
-#include "../config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
-#include "../tinyformat.h"
+#include <tinyformat.h>
 
 #include <stdexcept>
 
@@ -69,7 +69,7 @@ T get_pure_r_value(T&& val)
 #ifdef ABORT_ON_FAILED_ASSUME
 #define Assume(val) Assert(val)
 #else
-#define Assume(val) ((void)(val))
+#define Assume(val) ([&]() -> decltype(get_pure_r_value(val)) { auto&& check = (val); return std::forward<decltype(get_pure_r_value(val))>(check); }())
 #endif
 
 #endif // BITCOIN_UTIL_CHECK_H

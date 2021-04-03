@@ -6,10 +6,10 @@
 #ifndef BITCOIN_LOGGING_H
 #define BITCOIN_LOGGING_H
 
-#include "fs.h"
-#include "tinyformat.h"
-#include "threadsafety.h"
-#include "util/string_.h"
+#include <fs.h>
+#include <tinyformat.h>
+#include <threadsafety.h>
+#include <util/string.h>
 
 #include <atomic>
 #include <cstdint>

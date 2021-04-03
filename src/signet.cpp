@@ -2,26 +2,26 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "signet.h"
+#include <signet.h>
 
 #include <array>
 #include <cstdint>
 #include <vector>
 
-#include "consensus/merkle.h"
-#include "consensus/params.h"
-#include "consensus/validation.h"
-#include "core_io.h"
-#include "hash.h"
-#include "primitives/block.h"
-#include "primitives/transaction.h"
-#include "span.h"
-#include "script/interpreter.h"
-#include "script/standard.h"
-#include "streams.h"
-#include "util/strencodings.h"
-#include "util/system.h"
-#include "uint256.h"
+#include <consensus/merkle.h>
+#include <consensus/params.h>
+#include <consensus/validation.h>
+#include <core_io.h>
+#include <hash.h>
+#include <primitives/block.h>
+#include <primitives/transaction.h>
+#include <span.h>
+#include <script/interpreter.h>
+#include <script/standard.h>
+#include <streams.h>
+#include <util/strencodings.h>
+#include <util/system.h>
+#include <uint256.h>
 
 static constexpr uint8_t SIGNET_HEADER[4] = {0xec, 0xc7, 0xda, 0xa2};
 

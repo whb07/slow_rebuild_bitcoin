@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "txorphanage.h"
+#include <txorphanage.h>
 
-#include "consensus/validation.h"
-#include "logging.h"
-#include "policy/policy.h"
+#include <consensus/validation.h>
+#include <logging.h>
+#include <policy/policy.h>
 
 #include <cassert>
 

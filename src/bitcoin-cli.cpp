@@ -4,20 +4,20 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
-#include "chainparamsbase.h"
-#include "clientversion.h"
-#include "rpc/client.h"
-#include "rpc/mining.h"
-#include "rpc/protocol.h"
-#include "rpc/request.h"
-#include "tinyformat.h"
-#include "util/strencodings.h"
-#include "util/system.h"
-#include "util/translation.h"
-#include "util/url.h"
+#include <chainparamsbase.h>
+#include <clientversion.h>
+#include <rpc/client.h>
+#include <rpc/mining.h>
+#include <rpc/protocol.h>
+#include <rpc/request.h>
+#include <tinyformat.h>
+#include <util/strencodings.h>
+#include <util/system.h>
+#include <util/translation.h>
+#include <util/url.h>
 
 #include <algorithm>
 #include <cmath>
@@ -30,10 +30,10 @@
 
 #include <event2/buffer.h>
 #include <event2/keyvalq_struct.h>
-#include "support/events.h"
+#include <support/events.h>
 
-#include "univalue.h"
-#include "compat/stdin.h"
+#include <univalue.h>
+#include <compat/stdin.h>
 
 const std::function<std::string(const char*)> G_TRANSLATION_FUN = nullptr;
 UrlDecodeFn* const URL_DECODE = urlDecode;

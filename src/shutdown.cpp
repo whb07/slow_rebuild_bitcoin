@@ -3,12 +3,12 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "shutdown.h"
+#include <shutdown.h>
 
-#include "logging.h"
-#include "util/tokenpipe.h"
+#include <logging.h>
+#include <util/tokenpipe.h>
 
-#include "config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 
 #include <assert.h>
 #include <atomic>

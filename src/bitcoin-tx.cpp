@@ -3,27 +3,27 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
-#include "clientversion.h"
-#include "coins.h"
-#include "consensus/consensus.h"
-#include "key_io.h"
-#include "core_io.h"
-#include "policy/policy.h"
-#include "policy/rbf.h"
-#include "primitives/transaction.h"
-#include "script/script.h"
-#include "script/sign.h"
-#include "script/signingprovider.h"
-#include "univalue.h"
-#include "util/moneystr.h"
-#include "util/rbf.h"
-#include "util/strencodings.h"
-#include "util/string_.h"
-#include "util/system.h"
-#include "util/translation.h"
+#include <clientversion.h>
+#include <coins.h>
+#include <consensus/consensus.h>
+#include <core_io.h>
+#include <key_io.h>
+#include <policy/policy.h>
+#include <policy/rbf.h>
+#include <primitives/transaction.h>
+#include <script/script.h>
+#include <script/sign.h>
+#include <script/signingprovider.h>
+#include <univalue.h>
+#include <util/moneystr.h>
+#include <util/rbf.h>
+#include <util/strencodings.h>
+#include <util/string.h>
+#include <util/system.h>
+#include <util/translation.h>
 
 #include <functional>
 #include <memory>
@@ -725,7 +725,7 @@ static void MutateTx(CMutableTransaction& tx, const std::string& command,
 static void OutputTxJSON(const CTransaction& tx)
 {
     UniValue entry(UniValue::VOBJ);
-    TxToUniv(tx, uint256(), entry);
+    TxToUniv(tx, uint256(), /* include_addresses */ false, entry);
 
     std::string jsonOutput = entry.write(4);
     tfm::format(std::cout, "%s\n", jsonOutput);

@@ -5,7 +5,7 @@
 #ifndef BITCOIN_NODE_PSBT_H
 #define BITCOIN_NODE_PSBT_H
 
-#include "../psbt.h"
+#include <psbt.h>
 
 #include <optional>
 

@@ -3,11 +3,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "standard.h"
+#include <script/standard.h>
 
-#include "../crypto/sha256.h"
-#include "../pubkey.h"
-#include "script.h"
+#include <crypto/sha256.h>
+#include <pubkey.h>
+#include <script/script.h>
 
 #include <string>
 
@@ -220,7 +220,6 @@ bool ExtractDestination(const CScript& scriptPubKey, CTxDestination& addressRet)
         return true;
     }
     case TxoutType::MULTISIG:
-        // Multisig txns have more than one address...
     case TxoutType::NULL_DATA:
     case TxoutType::NONSTANDARD:
         return false;
@@ -228,6 +227,7 @@ bool ExtractDestination(const CScript& scriptPubKey, CTxDestination& addressRet)
     assert(false);
 }
 
+// TODO: from v23 ("addresses" and "reqSigs" deprecated) "ExtractDestinations" should be removed
 bool ExtractDestinations(const CScript& scriptPubKey, TxoutType& typeRet, std::vector<CTxDestination>& addressRet, int& nRequiredRet)
 {
     addressRet.clear();

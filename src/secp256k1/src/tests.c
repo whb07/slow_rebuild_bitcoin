@@ -15,8 +15,8 @@
 #include <time.h>
 
 #include "secp256k1.c"
-#include "include/secp256k1.h"
-#include "include/secp256k1_preallocated.h"
+#include "secp256k1.h"
+#include "secp256k1_preallocated.h"
 #include "testrand_impl.h"
 
 #ifdef ENABLE_OPENSSL_TESTS
@@ -2355,7 +2355,7 @@ void test_add_neg_y_diff_x(void) {
      * of the sum to be wrong (since infinity has no xy coordinates).
      * HOWEVER, if the x-coordinates are different, infinity is the
      * wrong answer, and such degeneracies are exposed. This is the
-     * root of https://github.com/ /secp256k1/issues/257
+     * root of https://github.com/bitcoin-core/secp256k1/issues/257
      * which this test is a regression test for.
      *
      * These points were generated in sage as

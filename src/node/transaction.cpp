@@ -3,13 +3,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../consensus/validation.h"
-#include "../net.h"
-#include "../net_processing.h"
-#include "context.h"
-#include "../validation.h"
-#include "../validationinterface.h"
-#include "transaction.h"
+#include <consensus/validation.h>
+#include <net.h>
+#include <net_processing.h>
+#include <node/context.h>
+#include <validation.h>
+#include <validationinterface.h>
+#include <node/transaction.h>
 
 #include <future>
 
@@ -38,6 +38,7 @@ TransactionError BroadcastTransaction(NodeContext& node, const CTransactionRef t
     bool callback_set = false;
 
     { // cs_main scope
+    assert(node.chainman);
     LOCK(cs_main);
     assert(std::addressof(::ChainstateActive()) == std::addressof(node.chainman->ActiveChainstate()));
     // If the transaction is already confirmed in the chain, don't do anything

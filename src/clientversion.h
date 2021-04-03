@@ -5,10 +5,10 @@
 #ifndef BITCOIN_CLIENTVERSION_H
 #define BITCOIN_CLIENTVERSION_H
 
-#include "util/macros.h"
+#include <util/macros.h>
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif //HAVE_CONFIG_H
 
 // Check that required client information is defined

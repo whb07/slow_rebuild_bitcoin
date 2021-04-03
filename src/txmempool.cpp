@@ -3,20 +3,20 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "txmempool.h"
+#include <txmempool.h>
 
-#include "consensus/consensus.h"
-#include "consensus/tx_verify.h"
-#include "consensus/validation.h"
-#include "policy/fees.h"
-#include "policy/policy.h"
-#include "policy/settings.h"
-#include "reverse_iterator.h"
-#include "util/moneystr.h"
-#include "util/system.h"
-#include "util/time_.h"
-#include "validation.h"
-#include "validationinterface.h"
+#include <consensus/consensus.h>
+#include <consensus/tx_verify.h>
+#include <consensus/validation.h>
+#include <policy/fees.h>
+#include <policy/policy.h>
+#include <policy/settings.h>
+#include <reverse_iterator.h>
+#include <util/moneystr.h>
+#include <util/system.h>
+#include <util/time.h>
+#include <validation.h>
+#include <validationinterface.h>
 
 #include <optional>
 
@@ -895,7 +895,7 @@ std::optional<CTxMemPool::txiter> CTxMemPool::GetIter(const uint256& txid) const
 {
     auto it = mapTx.find(txid);
     if (it != mapTx.end()) return it;
-    return {};
+    return std::nullopt;
 }
 
 CTxMemPool::setEntries CTxMemPool::GetIterSet(const std::set<uint256>& hashes) const

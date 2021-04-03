@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <test/util/setup_common.h>
-#include <util/string_.h>
+#include <util/string.h>
 #include <util/threadnames.h>
 
 #include <mutex>

@@ -4,7 +4,6 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <wallet/walletdb.h>
-#include <wallet/salvage.h>
 
 #include <fs.h>
 #include <key_io.h>
@@ -13,7 +12,7 @@
 #include <sync.h>
 #include <util/bip32.h>
 #include <util/system.h>
-#include <util/time_.h>
+#include <util/time.h>
 #include <util/translation.h>
 #ifdef USE_BDB
 #include <wallet/bdb.h>
@@ -28,35 +27,35 @@
 #include <string>
 
 namespace DBKeys {
-    const std::string ACENTRY{"acentry"};
-    const std::string ACTIVEEXTERNALSPK{"activeexternalspk"};
-    const std::string ACTIVEINTERNALSPK{"activeinternalspk"};
-    const std::string BESTBLOCK_NOMERKLE{"bestblock_nomerkle"};
-    const std::string BESTBLOCK{"bestblock"};
-    const std::string CRYPTED_KEY{"ckey"};
-    const std::string CSCRIPT{"cscript"};
-    const std::string DEFAULTKEY{"defaultkey"};
-    const std::string DESTDATA{"destdata"};
-    const std::string FLAGS{"flags"};
-    const std::string HDCHAIN{"hdchain"};
-    const std::string KEYMETA{"keymeta"};
-    const std::string KEY{"key"};
-    const std::string MASTER_KEY{"mkey"};
-    const std::string MINVERSION{"minversion"};
-    const std::string NAME{"name"};
-    const std::string OLD_KEY{"wkey"};
-    const std::string ORDERPOSNEXT{"orderposnext"};
-    const std::string POOL{"pool"};
-    const std::string PURPOSE{"purpose"};
-    const std::string SETTINGS{"settings"};
-    const std::string TX{"tx"};
-    const std::string VERSION{"version"};
-    const std::string WALLETDESCRIPTOR{"walletdescriptor"};
-    const std::string WALLETDESCRIPTORCACHE{"walletdescriptorcache"};
-    const std::string WALLETDESCRIPTORCKEY{"walletdescriptorckey"};
-    const std::string WALLETDESCRIPTORKEY{"walletdescriptorkey"};
-    const std::string WATCHMETA{"watchmeta"};
-    const std::string WATCHS{"watchs"};
+const std::string ACENTRY{"acentry"};
+const std::string ACTIVEEXTERNALSPK{"activeexternalspk"};
+const std::string ACTIVEINTERNALSPK{"activeinternalspk"};
+const std::string BESTBLOCK_NOMERKLE{"bestblock_nomerkle"};
+const std::string BESTBLOCK{"bestblock"};
+const std::string CRYPTED_KEY{"ckey"};
+const std::string CSCRIPT{"cscript"};
+const std::string DEFAULTKEY{"defaultkey"};
+const std::string DESTDATA{"destdata"};
+const std::string FLAGS{"flags"};
+const std::string HDCHAIN{"hdchain"};
+const std::string KEYMETA{"keymeta"};
+const std::string KEY{"key"};
+const std::string MASTER_KEY{"mkey"};
+const std::string MINVERSION{"minversion"};
+const std::string NAME{"name"};
+const std::string OLD_KEY{"wkey"};
+const std::string ORDERPOSNEXT{"orderposnext"};
+const std::string POOL{"pool"};
+const std::string PURPOSE{"purpose"};
+const std::string SETTINGS{"settings"};
+const std::string TX{"tx"};
+const std::string VERSION{"version"};
+const std::string WALLETDESCRIPTOR{"walletdescriptor"};
+const std::string WALLETDESCRIPTORCACHE{"walletdescriptorcache"};
+const std::string WALLETDESCRIPTORCKEY{"walletdescriptorckey"};
+const std::string WALLETDESCRIPTORKEY{"walletdescriptorkey"};
+const std::string WATCHMETA{"watchmeta"};
+const std::string WATCHS{"watchs"};
 } // namespace DBKeys
 
 //
@@ -116,8 +115,8 @@ bool WalletBatch::WriteKey(const CPubKey& vchPubKey, const CPrivKey& vchPrivKey,
 }
 
 bool WalletBatch::WriteCryptedKey(const CPubKey& vchPubKey,
-                                  const std::vector<unsigned char>& vchCryptedSecret,
-                                  const CKeyMetadata &keyMeta)
+                                const std::vector<unsigned char>& vchCryptedSecret,
+                                const CKeyMetadata &keyMeta)
 {
     if (!WriteKeyMetadata(keyMeta, vchPubKey, true)) {
         return false;
@@ -805,7 +804,7 @@ DBErrors WalletBatch::LoadWallet(CWallet* pwallet)
     pwallet->WalletLogPrintf("Wallet File Version = %d\n", wallet_version > 0 ? wallet_version : last_client);
 
     pwallet->WalletLogPrintf("Keys: %u plaintext, %u encrypted, %u w/ metadata, %u total. Unknown wallet records: %u\n",
-                             wss.nKeys, wss.nCKeys, wss.nKeyMeta, wss.nKeys + wss.nCKeys, wss.m_unknown_records);
+           wss.nKeys, wss.nCKeys, wss.nKeyMeta, wss.nKeys + wss.nCKeys, wss.m_unknown_records);
 
     // nTimeFirstKey is only reliable if all keys have metadata
     if (pwallet->IsLegacy() && (wss.nKeys + wss.nCKeys + wss.nWatchKeys) != wss.nKeyMeta) {

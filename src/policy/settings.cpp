@@ -3,10 +3,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "settings.h"
+#include <policy/settings.h>
 
-#include "feerate.h"
-#include "policy.h"
+#include <policy/feerate.h>
+#include <policy/policy.h>
 
 bool fIsBareMultisigStd = DEFAULT_PERMIT_BAREMULTISIG;
 CFeeRate incrementalRelayFee = CFeeRate(DEFAULT_INCREMENTAL_RELAY_FEE);

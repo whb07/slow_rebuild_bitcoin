@@ -5,7 +5,7 @@
 #ifndef BITCOIN_VERSIONBITS_H
 #define BITCOIN_VERSIONBITS_H
 
-#include "chain.h"
+#include <chain.h>
 #include <map>
 
 /** What block version to use for new blocks (pre versionbits) */

@@ -5,8 +5,8 @@
 #ifndef BITCOIN_INDEX_DISKTXPOS_H
 #define BITCOIN_INDEX_DISKTXPOS_H
 
-#include "../flatfile.h"
-#include "../serialize.h"
+#include <flatfile.h>
+#include <serialize.h>
 
 struct CDiskTxPos : public FlatFilePos
 {

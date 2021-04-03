@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "url.h"
+#include <util/url.h>
 
 #include <event2/http.h>
 #include <stdlib.h>

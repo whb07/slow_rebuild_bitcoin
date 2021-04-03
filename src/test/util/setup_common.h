@@ -5,17 +5,17 @@
 #ifndef BITCOIN_TEST_UTIL_SETUP_COMMON_H
 #define BITCOIN_TEST_UTIL_SETUP_COMMON_H
 
-#include "../../chainparamsbase.h"
-#include "../../fs.h"
-#include "../../key.h"
-#include "../../node/context.h"
-#include "../../pubkey.h"
-#include "../../random.h"
-#include "stdexcept"
-#include "../../txmempool.h"
-#include "../../util/check.h"
-#include "../../util/string_.h"
-#include "../../util/vector.h"
+#include <chainparamsbase.h>
+#include <fs.h>
+#include <key.h>
+#include <node/context.h>
+#include <pubkey.h>
+#include <random.h>
+#include <stdexcept>
+#include <txmempool.h>
+#include <util/check.h>
+#include <util/string.h>
+#include <util/vector.h>
 
 #include <type_traits>
 #include <vector>

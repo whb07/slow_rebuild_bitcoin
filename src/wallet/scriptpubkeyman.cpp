@@ -9,9 +9,9 @@
 #include <script/sign.h>
 #include <util/bip32.h>
 #include <util/strencodings.h>
-#include <util/string_.h>
+#include <util/string.h>
 #include <util/system.h>
-#include <util/time_.h>
+#include <util/time.h>
 #include <util/translation.h>
 #include <wallet/external_signer.h>
 #include <wallet/scriptpubkeyman.h>

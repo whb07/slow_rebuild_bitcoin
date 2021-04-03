@@ -3,9 +3,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "feerate.h"
+#include <policy/feerate.h>
 
-#include "../tinyformat.h"
+#include <tinyformat.h>
 
 CFeeRate::CFeeRate(const CAmount& nFeePaid, size_t nBytes_)
 {

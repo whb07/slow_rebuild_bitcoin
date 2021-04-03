@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <addrdb.h>
-#include "addrman.h"
+#include <addrman.h>
 #include <blockencodings.h>
 #include <blockfilter.h>
 #include <chain.h>

@@ -3,10 +3,10 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "merkleblock.h"
+#include <merkleblock.h>
 
-#include "hash.h"
-#include "consensus/consensus.h"
+#include <hash.h>
+#include <consensus/consensus.h>
 
 
 std::vector<unsigned char> BitsToBytes(const std::vector<bool>& bits)

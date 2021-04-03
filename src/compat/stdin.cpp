@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "../config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
 #include <cstdio>       // for fileno(), stdin
@@ -17,7 +17,7 @@
 #include <poll.h>       // for StdinReady()
 #endif
 
-#include "stdin.h"
+#include <compat/stdin.h>
 
 // https://stackoverflow.com/questions/1413445/reading-a-password-from-stdcin
 void SetStdinEcho(bool enable)

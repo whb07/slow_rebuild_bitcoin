@@ -3,21 +3,21 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "random.h"
+#include <random.h>
 
-#include "compat/cpuid.h"
-#include "crypto/sha256.h"
-#include "crypto/sha512.h"
-#include "support/cleanse.h"
+#include <compat/cpuid.h>
+#include <crypto/sha256.h>
+#include <crypto/sha512.h>
+#include <support/cleanse.h>
 #ifdef WIN32
 #include <compat.h> // for Windows API
 #include <wincrypt.h>
 #endif
-#include "logging.h"  // for LogPrintf()
-#include "randomenv.h"
-#include "support/allocators/secure.h"
-#include "sync.h"     // for Mutex
-#include "util/time_.h" // for GetTimeMicros()
+#include <logging.h>  // for LogPrintf()
+#include <randomenv.h>
+#include <support/allocators/secure.h>
+#include <sync.h>     // for Mutex
+#include <util/time.h> // for GetTimeMicros()
 
 #include <stdlib.h>
 #include <thread>

@@ -2,16 +2,15 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "../chainparams.h"
-#include "base.h"
-#include "../node/ui_interface.h"
-#include "../shutdown.h"
-#include "../tinyformat.h"
-#include "../util/system.h"
-#include "../util/translation.h"
-#include "../validation.h"
-#include "../warnings.h"
-#include "leveldb/write_batch.h"
+#include <chainparams.h>
+#include <index/base.h>
+#include <node/ui_interface.h>
+#include <shutdown.h>
+#include <tinyformat.h>
+#include <util/system.h>
+#include <util/translation.h>
+#include <validation.h>
+#include <warnings.h>
 
 constexpr char DB_BEST_BLOCK = 'B';
 

@@ -2,17 +2,17 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "httprpc.h"
+#include <httprpc.h>
 
-#include "chainparams.h"
-#include "crypto/hmac_sha256.h"
-#include "httpserver.h"
-#include "rpc/protocol.h"
-#include "rpc/server.h"
-#include "util/strencodings.h"
-#include "util/system.h"
-#include "util/translation.h"
-#include "walletinitinterface.h"
+#include <chainparams.h>
+#include <crypto/hmac_sha256.h>
+#include <httpserver.h>
+#include <rpc/protocol.h>
+#include <rpc/server.h>
+#include <util/strencodings.h>
+#include <util/system.h>
+#include <util/translation.h>
+#include <walletinitinterface.h>
 
 #include <algorithm>
 #include <iterator>
@@ -144,7 +144,7 @@ static bool RPCAuthorized(const std::string& strAuth, std::string& strAuthUserna
     return multiUserAuthorized(strUserPass);
 }
 
-static bool HTTPReq_JSONRPC(const util::Ref& context, HTTPRequest* req)
+static bool HTTPReq_JSONRPC(const std::any& context, HTTPRequest* req)
 {
     // JSONRPC handles only POST
     if (req->GetRequestMethod() != HTTPRequest::POST) {
@@ -288,7 +288,7 @@ static bool InitRPCAuthentication()
     return true;
 }
 
-bool StartHTTPRPC(const util::Ref& context)
+bool StartHTTPRPC(const std::any& context)
 {
     LogPrint(BCLog::RPC, "Starting HTTP RPC server\n");
     if (!InitRPCAuthentication())

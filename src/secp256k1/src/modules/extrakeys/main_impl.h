@@ -125,7 +125,7 @@ int secp256k1_xonly_pubkey_tweak_add_check(const secp256k1_context* ctx, const u
     secp256k1_fe_get_b32(pk_expected32, &pk.x);
 
     return secp256k1_memcmp_var(&pk_expected32, tweaked_pubkey32, 32) == 0
-           && secp256k1_fe_is_odd(&pk.y) == tweaked_pk_parity;
+            && secp256k1_fe_is_odd(&pk.y) == tweaked_pk_parity;
 }
 
 static void secp256k1_keypair_save(secp256k1_keypair *keypair, const secp256k1_scalar *sk, secp256k1_ge *pk) {

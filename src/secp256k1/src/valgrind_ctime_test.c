@@ -5,7 +5,7 @@
  **********************************************************************/
 
 #include <valgrind/memcheck.h>
-#include "include/secp256k1.h"
+#include "secp256k1.h"
 #include "assumptions.h"
 #include "util.h"
 
@@ -22,7 +22,7 @@
 #endif
 
 #ifdef ENABLE_MODULE_SCHNORRSIG
-#include "include/secp256k1_schnorrsig.h"
+#include "secp256k1_schnorrsig.h"
 #endif
 
 int main(void) {

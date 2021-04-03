@@ -3,17 +3,17 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/bitcoin-config.h"
+#include <config/bitcoin-config.h>
 #endif
 
-#include "timedata.h"
+#include <timedata.h>
 
-#include "netaddress.h"
-#include "node/ui_interface.h"
-#include "sync.h"
-#include "util/system.h"
-#include "util/translation.h"
-#include "warnings.h"
+#include <netaddress.h>
+#include <node/ui_interface.h>
+#include <sync.h>
+#include <util/system.h>
+#include <util/translation.h>
+#include <warnings.h>
 
 static Mutex g_timeoffset_mutex;
 static int64_t nTimeOffset GUARDED_BY(g_timeoffset_mutex) = 0;

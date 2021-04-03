@@ -3,14 +3,14 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "fees.h"
+#include <policy/fees.h>
 
-#include "../clientversion.h"
-#include "../fs.h"
-#include "../logging.h"
-#include "../streams.h"
-#include "../txmempool.h"
-#include "../util/system.h"
+#include <clientversion.h>
+#include <fs.h>
+#include <logging.h>
+#include <streams.h>
+#include <txmempool.h>
+#include <util/system.h>
 
 static const char* FEE_ESTIMATES_FILENAME = "fee_estimates.dat";
 

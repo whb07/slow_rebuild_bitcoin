@@ -4,7 +4,7 @@
 
 #include <random.h>
 #include <scheduler.h>
-#include <util/time_.h>
+#include <util/time.h>
 
 #include <boost/test/unit_test.hpp>
 

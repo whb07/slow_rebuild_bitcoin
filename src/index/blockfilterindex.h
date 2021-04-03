@@ -5,13 +5,11 @@
 #ifndef BITCOIN_INDEX_BLOCKFILTERINDEX_H
 #define BITCOIN_INDEX_BLOCKFILTERINDEX_H
 
-#include "../blockfilter.h"
-#include "../chain.h"
-#include "../flatfile.h"
-#include "base.h"
-#include "../util/hasher.h"
-#include "leveldb/write_batch.h"
-#include "leveldb/env.h"
+#include <blockfilter.h>
+#include <chain.h>
+#include <flatfile.h>
+#include <index/base.h>
+#include <util/hasher.h>
 
 /** Interval between compact filter checkpoints. See BIP 157. */
 static constexpr int CFCHECKPT_INTERVAL = 1000;

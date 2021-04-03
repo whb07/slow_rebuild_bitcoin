@@ -2,19 +2,19 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "descriptor.h"
+#include <script/descriptor.h>
 
-#include "../key_io.h"
-#include "../pubkey.h"
-#include "script.h"
-#include "standard.h"
+#include <key_io.h>
+#include <pubkey.h>
+#include <script/script.h>
+#include <script/standard.h>
 
-#include "../span.h"
-#include "../util/bip32.h"
-#include "../util/spanparsing.h"
-#include "../util/system.h"
-#include "../util/strencodings.h"
-#include "../util/vector.h"
+#include <span.h>
+#include <util/bip32.h>
+#include <util/spanparsing.h>
+#include <util/system.h>
+#include <util/strencodings.h>
+#include <util/vector.h>
 
 #include <memory>
 #include <optional>
