@@ -6,6 +6,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined")
 #set(CMAKE_CXX_FLAGS "" CACHE STRING "C compiler flags" FORCE )
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 set(CMAKE_CXX_FLAGS_DEBUG  "-g")
 include(GNUInstallDirs)
 # Add pkg-config functionality
@@ -304,7 +305,7 @@ target_compile_definitions(lib_bitcoin_wallet PRIVATE HAVE_CONFIG_H=1)
 add_library(lib_bitcoin_wallet_tool STATIC
         wallet/wallettool.cpp
         ${BITCOIN_CORE_H})
-target_link_libraries(lib_bitcoin_wallet_tool PUBLIC lib_bitcoin_includes)
+target_link_libraries(lib_bitcoin_wallet_tool PUBLIC lib_bitcoin_includes lib_bitcoin_wallet)
 target_compile_definitions(lib_bitcoin_wallet_tool PRIVATE HAVE_CONFIG_H=1)
 
 
@@ -383,7 +384,7 @@ add_library(lib_bitcoin_util STATIC
         util/tokenpipe.cpp
         util/url.cpp
         ${BITCOIN_CORE_H})
-target_link_libraries(lib_bitcoin_util PUBLIC lib_bitcoin_includes libevent)
+target_link_libraries(lib_bitcoin_util PUBLIC lib_bitcoin_includes libevent lib_bitcoin_consensus)
 target_compile_definitions(lib_bitcoin_util PRIVATE HAVE_CONFIG_H=1)
 
 add_library(lib_bitcoin_server STATIC
@@ -503,6 +504,4 @@ target_link_libraries(bitcoin-util PUBLIC
         libevent
         )
 target_compile_definitions(bitcoin-util PRIVATE HAVE_CONFIG_H=1 )
-
-
 
